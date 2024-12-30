@@ -1,3 +1,8 @@
+
+# **add medicine placceholder(likewise in index.html) use the script tag in index.html and in img class add pexels**
+
+
+
 # E-Commerce Website
 
 A responsive, full-stack e-commerce application
