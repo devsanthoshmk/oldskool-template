@@ -19,7 +19,7 @@ def checkout(request):
 
 
 def checkout_shipping(request):
-    return render(request, "produstc/checkout-shipping.html")
+    return render(request, "products/checkout-shipping.html")
 
 
 def checkout_payment(request):
