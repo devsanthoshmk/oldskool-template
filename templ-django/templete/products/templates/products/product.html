@@ -19,8 +19,8 @@
                 <nav class="m-0" aria-label="breadcrumb">
                     <ol class="breadcrumb m-0">
                       <li class="breadcrumb-item breadcrumb-light"><a href="#">Home</a></li>
-                      <li class="breadcrumb-item breadcrumb-light"><a href="#">T-Shirts</a></li>
-                      <li class="breadcrumb-item  breadcrumb-light active" aria-current="page">Osaka Japan Mens T-Shirt</li>
+                      <li class="breadcrumb-item breadcrumb-light"><a href="#">Ayurveda </a></li>
+                      <li class="breadcrumb-item  breadcrumb-light active" aria-current="page">Cough syrup</li>
                     </ol>
                 </nav>            </div>
         </div>
@@ -33,27 +33,27 @@
 
                 <!-- Product Images-->
                 <div class="col-12 col-md-6 col-xl-7">
-                    <div class="row g-3" data-aos="fade-right">
+                    <div class="row g-3" data-aos="fade-right"> 
                         <div class="col-12">
                             <picture>
-                                <img class="img-fluid" data-zoomable src="./assets/images/products/product-page-1.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
+                                <img class="img-fluid" data-zoomable src={%static './assets/images/products/product-page-1.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
+                            </picture>
+                        </div>
+                        {% comment %} <div class="col-12">
+                            <picture>
+                                <img class="img-fluid" data-zoomable src={%static './assets/images/products/product-page-2.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                         </div>
                         <div class="col-12">
                             <picture>
-                                <img class="img-fluid" data-zoomable src="./assets/images/products/product-page-2.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
+                                <img class="img-fluid" data-zoomable src={%static './assets/images/products/product-page-3.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                         </div>
                         <div class="col-12">
                             <picture>
-                                <img class="img-fluid" data-zoomable src="./assets/images/products/product-page-3.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
+                                <img class="img-fluid" data-zoomable src={%static './assets/images/products/product-page-4.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
-                        </div>
-                        <div class="col-12">
-                            <picture>
-                                <img class="img-fluid" data-zoomable src="./assets/images/products/product-page-4.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
-                            </picture>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <!-- /Product Images-->
@@ -63,12 +63,12 @@
                     <div class="sticky-top top-5">
                         <div class="pb-3" data-aos="fade-in">
                             <div class="d-flex align-items-center mb-3">
-                                <p class="small fw-bolder text-uppercase tracking-wider text-muted m-0 me-4">KiiKii</p>
+                                <p class="small fw-bolder text-uppercase tracking-wider text-muted m-0 me-4">Company name</p>
                                 <div class="d-flex justify-content-start align-items-center disable-child-pointer cursor-pointer"
                                 data-pixr-scrollto
                                 data-target=".reviews">
                                 <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
+                                {% comment %} <div class="rating position-relative d-table">
                                     <div class="position-absolute stars" style="width: 80%">
                                         <i class="ri-star-fill text-dark mr-1"></i>
                                         <i class="ri-star-fill text-dark mr-1"></i>
@@ -83,20 +83,21 @@
                                         <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
                                         <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
                                     </div>
-                                </div>        <small class="text-muted d-inline-block ms-2 fs-bolder">(105 reviews)</small>
+                                </div>         {% endcomment %}
+                                {% comment %} <small class="text-muted d-inline-block ms-2 fs-bolder">(105 reviews)</small> {% endcomment %}
                             </div>
                             </div>
                             
-                            <h1 class="mb-1 fs-2 fw-bold">Kiikii Osaka Japan Mens T-Shirt Limited Edition</h1>
+                            <h1 class="mb-1 fs-2 fw-bold">Ayurveda medicine 1</h1>
                             <div class="d-flex justify-content-between align-items-center">
-                                <p class="fs-4 m-0">$34.99</p>
+                                <p class="fs-4 m-0"> &#8377;500</p>
                             </div>
                             <div class="border-top mt-4 mb-3 product-option">
                                 <small class="text-uppercase pt-4 d-block fw-bolder">
-                                    <span class="text-muted">Available Sizes (Mens)</span> : <span class="selected-option fw-bold"
-                                        data-pixr-product-option="size">M</span>
+                                    <span class="text-muted">Quantity </span> : <span class="selected-option fw-bold"
+                                        data-pixr-product-option="size">100Ml</span>
                                 </small>
-                                <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
+                                {% comment %} <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
                                             <div class="form-check-option form-check-rounded">
                                                 <input 
                                                     type="radio" 
@@ -158,18 +159,18 @@
                                                     
                                                     <small>XXL</small>
                                                 </label>
-                                            </div>        </div>
+                                            </div>        </div> {% endcomment %}
                             </div>
                             <div class="mb-3">
                                 <small class="text-uppercase pt-4 d-block fw-bolder text-muted">
-                                    Available Designs :
+                                    Available Quantity :
                                 </small>
                                 <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
                                     <picture class="me-2">
-                                        <img class="f-w-24 p-2 bg-light border-bottom border-dark border-2 cursor-pointer" src="./assets/images/products/product-page-thumb-1.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
+                                        <img class="f-w-24 p-2 bg-light border-bottom border-dark border-2 cursor-pointer" src={%static './assets/images/products/product-page-thumb-1.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
                                     </picture>
                                     <picture>
-                                        <img class="f-w-24 p-2 bg-light cursor-pointer" src="./assets/images/products/product-page-thumb-2.jpeg" alt="HTML Bootstrap Template by Pixel Rocket">
+                                        <img class="f-w-24 p-2 bg-light cursor-pointer" src={%static './assets/images/products/product-page-thumb-2.jpeg' %} alt="HTML Bootstrap Template by Pixel Rocket">
                                     </picture>
                                 </div>
                             </div>
@@ -246,7 +247,7 @@
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item d-flex border-0 row g-0 px-0">
                                                 <span class="col-4 fw-bolder">Delivery</span>
-                                                <span class="col-7 offset-1">Standard delivery free for orders over $99. Next day delivery $9.99</span>
+                                                <span class="col-7 offset-1">Standard delivery free for orders over  &#8377;99. Next day delivery  &#8377;9.99</span>
                                             </li>
                                             <li class="list-group-item d-flex border-0 row g-0 px-0">
                                                 <span class="col-4 fw-bolder">Returns</span>
@@ -303,7 +304,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-1.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-1.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -312,7 +313,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Air VaporMax 2021</a>
                                       <small class="text-muted d-block">4 colours, 10 sizes</small>
-                                              <p class="mt-2 mb-0 small"><s class="text-muted">$329.99</s> <span class="text-danger">$198.66</span></p>
+                                              <p class="mt-2 mb-0 small"><s class="text-muted"> &#8377;329.99</s> <span class="text-danger"> &#8377;198.66</span></p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -326,7 +327,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-2.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-2.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -335,7 +336,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike ZoomX Vaporfly</a>
                                       <small class="text-muted d-block">2 colours, 4 sizes</small>
-                                              <p class="mt-2 mb-0 small">$275.45</p>
+                                              <p class="mt-2 mb-0 small"> &#8377;275.45</p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -349,7 +350,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-3.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-3.jpg' %} alt="">
                                       </picture>
                                   </div>
                                   <div class="card-body px-0">
@@ -368,7 +369,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-4.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-4.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -377,7 +378,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Air Force 1</a>
                                       <small class="text-muted d-block">6 colours, 9 sizes</small>
-                                              <p class="mt-2 mb-0 small">$425.85</p>
+                                              <p class="mt-2 mb-0 small"> &#8377;425.85</p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -391,7 +392,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-5.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-5.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -400,7 +401,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Air Max 90</a>
                                       <small class="text-muted d-block">4 colours, 10 sizes</small>
-                                              <p class="mt-2 mb-0 small"><s class="text-muted">$196.99</s> <span class="text-danger">$98.66</span></p>
+                                              <p class="mt-2 mb-0 small"><s class="text-muted"> &#8377;196.99</s> <span class="text-danger"> &#8377;98.66</span></p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -415,7 +416,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-6.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-6.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -424,7 +425,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Glide FlyEase</a>
                                       <small class="text-muted d-block">1 colour</small>
-                                              <p class="mt-2 mb-0 small"><s class="text-muted">$329.99</s> <span class="text-danger">$198.66</span></p>
+                                              <p class="mt-2 mb-0 small"><s class="text-muted"> &#8377;329.99</s> <span class="text-danger"> &#8377;198.66</span></p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -437,7 +438,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-7.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-7.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -446,7 +447,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Zoom Freak</a>
                                       <small class="text-muted d-block">2 colours, 2 sizes</small>
-                                              <p class="mt-2 mb-0 small">$444.99</p>
+                                              <p class="mt-2 mb-0 small"> &#8377;444.99</p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -460,7 +461,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-8.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-8.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -469,7 +470,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Air Pegasus</a>
                                       <small class="text-muted d-block">3 colours, 10 sizes</small>
-                                              <p class="mt-2 mb-0 small">$178.99</p>
+                                              <p class="mt-2 mb-0 small"> &#8377;178.99</p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
@@ -483,7 +484,7 @@
                                       </div>
                                       <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                                       <picture class="position-relative overflow-hidden d-block bg-light">
-                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-1.jpg" alt="">
+                                          <img class="w-100 img-fluid position-relative z-index-10" title="" src={%static './assets/images/products/product-1.jpg' %} alt="">
                                       </picture>
                                           <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                                               <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
@@ -492,7 +493,7 @@
                                   <div class="card-body px-0">
                                       <a class="text-decoration-none link-cover" href="./product">Nike Air Jordans</a>
                                       <small class="text-muted d-block">3 colours, 10 sizes</small>
-                                              <p class="mt-2 mb-0 small">$154.99</p>
+                                              <p class="mt-2 mb-0 small"> &#8377;154.99</p>
                                   </div>
                               </div>
                               <!--/ Card Product-->
