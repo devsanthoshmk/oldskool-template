@@ -41,21 +41,16 @@ A responsive, full-stack e-commerce application
   ```bash
   source tutorial-env/bin/activate
   ```
-4. Install requirements:
+5. Install requirements:
   ```bash
   python -m pip install requirements.txt
   ```
-5. Enter into Django project
+7. Enter into Django project
   ```bash
   cd templete 
   ```
-6.
-
-7. To run dev server:
+8. To run dev server:
   depend on your IDE run this in integrated terminal or system terminal/cmd
-  ```bash
-  cd .. && 
-  ```
   ```bash
   python manage.py runserver
   ```
