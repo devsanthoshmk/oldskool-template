@@ -20,25 +20,27 @@ A responsive, full-stack e-commerce application
   cd templ-django
   ``` 
 3. Activate virtual env:
+  on Windows,
   ```bash
   templ\Scripts\activate
   ```
-4. On Unix or MacOS, run:
+  On Unix or MacOS,
   ```bash
   source tutorial-env/bin/activate
   ```
+4. Enter into Django project
   ```bash
-  cd templete #Enter into Django project
+  cd templete oject
   ```
 5. Open in IDE(optinal if you just wanna see/run):
   ```bash
   code .  #vs code
   ```
-  #for other IDE
+  for other IDE
   ```bash
   subl .  #sublime text
   ```
-  or follow your IDE guide...
+   or follow your IDE guide...
 
 5. To run dev server:
   depend on your IDE run this in integrated terminal or system terminal/cmd
