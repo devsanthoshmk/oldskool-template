@@ -21,7 +21,7 @@ A responsive, full-stack e-commerce application
   ``` 
 3. Activate virtual env:
   ```bash
-  python -m venv tmpl
+  python -m venv templ
   ```
   on Windows,
   ```bash
@@ -31,11 +31,15 @@ A responsive, full-stack e-commerce application
   ```bash
   source tutorial-env/bin/activate
   ```
-4. Enter into Django project
+4. Install requirements:
+  ```bash
+  pip install requirements.txt
+  ```
+5. Enter into Django project
   ```bash
   cd templete oject
   ```
-5. Open in IDE(optinal if you just wanna see/run):
+6. Open in IDE(optinal if you just wanna see/run):
   ```bash
   code .  #vs code
   ```
@@ -45,7 +49,7 @@ A responsive, full-stack e-commerce application
   ```
    or follow your IDE guide...
 
-5. To run dev server:
+7. To run dev server:
   depend on your IDE run this in integrated terminal or system terminal/cmd
   ```bash
   python manage.py runserver
