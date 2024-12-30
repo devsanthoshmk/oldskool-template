@@ -20,6 +20,9 @@ A responsive, full-stack e-commerce application
   cd templ-django
   ``` 
 3. Activate virtual env:
+  ```bash
+  python -m venv tmpl
+  ```
   on Windows,
   ```bash
   templ\Scripts\activate
