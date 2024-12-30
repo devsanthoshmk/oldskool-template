@@ -33,7 +33,7 @@ A responsive, full-stack e-commerce application
   ```
 4. Install requirements:
   ```bash
-  pip install requirements.txt
+  python -m pip install requirements.txt
   ```
 5. Enter into Django project
   ```bash
