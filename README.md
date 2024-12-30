@@ -19,7 +19,17 @@ A responsive, full-stack e-commerce application
   ```bash
   cd templ-django
   ``` 
-3. Activate virtual env:
+3. Open in IDE(optinal if you just wanna see/run):
+  ```bash
+  code .  #vs code
+  ```
+  for other IDE
+  ```bash
+  subl .  #sublime text
+  ```
+   or follow your IDE guide...
+   
+4. Activate virtual env:
   ```bash
   python -m venv templ
   ```
@@ -39,18 +49,13 @@ A responsive, full-stack e-commerce application
   ```bash
   cd templete 
   ```
-6. Open in IDE(optinal if you just wanna see/run):
-  ```bash
-  code .  #vs code
-  ```
-  for other IDE
-  ```bash
-  subl .  #sublime text
-  ```
-   or follow your IDE guide...
+6.
 
 7. To run dev server:
   depend on your IDE run this in integrated terminal or system terminal/cmd
+  ```bash
+  cd .. && 
+  ```
   ```bash
   python manage.py runserver
   ```
