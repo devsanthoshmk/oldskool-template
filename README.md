@@ -37,7 +37,7 @@ A responsive, full-stack e-commerce application
   ```
 5. Enter into Django project
   ```bash
-  cd templete oject
+  cd templete 
   ```
 6. Open in IDE(optinal if you just wanna see/run):
   ```bash
