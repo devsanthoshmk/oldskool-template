@@ -1,0 +1,602 @@
+
+{# to edit this page #}
+{# the template index.html is split into serveral parts due to how django works  #}
+<!-- thuchaka 
+ {# here is how:
+    1.base.html(to change head and lil body)
+        it contains the base code like head lil body and script tags
+        1.1)Nav-> base.html includes nav bar(to change nav go to  nav.html)
+        1.2)footer-> it also includes footer from  footer
+
+    2.index.html(itself):
+        it contains the main element belongs to index.html #}
+-->
+
+
+{% extends "base.html" %}
+
+{%block main%}
+    <section class="mt-0 overflow-hidden ">
+        <!-- Page Content Goes Here -->
+
+
+<!-- Top banner -->
+        <section class="vh-75 vh-lg-60 container-fluid rounded overflow-hidden px-4" data-aos="fade-in">
+            <!-- Swiper Info -->
+            <div class="swiper-container overflow-hidden rounded h-100 bg-light" data-swiper data-options='{
+              "spaceBetween": 0,
+              "slidesPerView": 1,
+              "effect": "fade",
+              "speed": 1000,
+              "loop": true,
+              "parallax": true,
+              "observer": true,
+              "observeParents": true,
+              "lazy": {
+                "loadPrevNext": true
+                },
+                "autoplay": {
+                  "delay": 5000,
+                  "disableOnInteraction": false
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+                }
+              }'>
+              <div class="swiper-wrapper">
+                {%for i in "1234"%}
+                <!-- Slide-->
+                <div class="swiper-slide position-relative h-100 w-100">
+                  <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
+                    <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden " data-swiper-parallax="-100"
+                      style=" will-change: transform; background-image: url('https://picsum.photos/800/1200?random={{i}}')">
+                    </div>
+                  </div>
+                  <div
+                    class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
+                    <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">catchphrase</p>
+                    <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white" data-swiper-parallax="100">
+                      <span class="text-outline-light">catchphrase</span> catchphrase</h2>
+                    <div data-swiper-parallax-y="-25">
+                      <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /Slide-->
+                {%endfor%}
+            
+                </div>
+            
+              <div class="swiper-pagination swiper-pagination-bullet-light"></div>
+            
+            </div>
+            <!-- / Swiper Info-->        </section>
+<!--/ Top Banner-->
+
+<!-- Featured Brands-->
+        <div class="brand-section container-fluid" data-aos="fade-in">
+            <div class="bg-overlay-sides-white-to-transparent bg-white py-5 py-md-7">
+                <section class="marquee marquee-hover-pause">
+                    <div class="marquee-body">
+                        <div class="marquee-section animation-marquee-50">
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-1.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-2.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-3.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-4.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-5.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-6.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-7.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-8.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-3 mx-lg-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-9.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="marquee-section animation-marquee-50">
+                            <div class="mx-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-1.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-2.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-3.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="mx-5 f-w-24">
+                                <a class="d-block" href="./category.html">
+                                    <picture>
+                                        <img class="img-fluid d-table mx-auto" src="{% static '/assets/images/logos/logo-4.svg' %} " alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+<!--/ Featured Brands-->
+
+
+
+
+
+<!-- slant images/products grenes -->
+
+
+        <div class="container-fluid px-4">
+
+            <!-- Featured Categories-->
+            <div>
+                    <!-- Swiper Latest -->
+                    <div class="swiper-container overflow-hidden overflow-lg-visible"
+                      data-swiper
+                      data-options='{
+                        "spaceBetween": 25,
+                        "slidesPerView": 1,
+                        "observer": true,
+                        "observeParents": true,
+                        "breakpoints": {     
+                          "540": {
+                            "slidesPerView": 1,
+                            "spaceBetween": 0
+                          },
+                          "770": {
+                            "slidesPerView": 2
+                          },
+                          "1024": {
+                            "slidesPerView": 3
+                          },
+                          "1200": {
+                            "slidesPerView": 4
+                          },
+                          "1500": {
+                            "slidesPerView": 5
+                          }
+                        },   
+                        "navigation": {
+                          "nextEl": ".swiper-next",
+                          "prevEl": ".swiper-prev"
+                        }
+                      }' style="padding-right: 3.6rem">
+                      <div class="swiper-wrapper">
+                        {% for _ in "1111" %}
+                          <div class="swiper-slide align-self-stretch bg-transparent h-auto">
+                            <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
+                                <picture class="d-block mb-4 img-clip-shape-one">
+                                    <img class="w-100 pexels" title="" src="{% static 'assets/images/categories/category-4.jpg' %}/" alt="HTML Bootstrap Template by Pixel Rocket">
+                                </picture>
+                                <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
+                                <h4 class="lead fw-bold">Jackets &amp; Coats</h4>
+                                <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            </div>
+                          </div>
+                          {%endfor%}
+                      </div>
+                    
+                      <div class="swiper-btn swiper-prev swiper-disabled-hide swiper-btn-side btn-icon bg-white text-dark ms-3 shadow mt-n5"><i class="ri-arrow-left-s-line "></i></div>
+                      <div class="swiper-btn swiper-next swiper-disabled-hide swiper-btn-side swiper-btn-side-right btn-icon bg-white text-dark me-3 shadow mt-n5"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                    
+                    </div>
+                    <!-- / Swiper Latest-->                <!-- SVG Used for Clipath on featured images above-->
+                <svg width="0" height="0">
+                  <defs>
+                  <clipPath id="svg-slanted-one" clipPathUnits="objectBoundingBox">
+                      <path d="M0.822,1 H0.016 a0.015,0.015,0,0,1,-0.016,-0.015 L0.158,0.015 A0.016,0.015,0,0,1,0.173,0 L0.984,0 a0.016,0.015,0,0,1,0.016,0.015 L0.837,0.985 A0.016,0.015,0,0,1,0.822,1"></path>
+                  </clipPath>
+                  </defs>
+                </svg>            </div>
+            <!-- /Featured Categories-->
+
+<!-- /slant images/products grenes -->
+</section>
+
+
+
+
+<!-- products -->
+<div class="container-fluid aos-init aos-animate px-3" data-aos="fade-in">
+    <!-- Category Toolbar-->
+    <div class="d-flex justify-content-between items-center pt-5 pb-4 flex-column flex-lg-row">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Medicines</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Syrups</li>
+                </ol>
+            </nav>
+            <h1 class="fw-bold fs-3 mb-2">Medicines</h1>
+             {# <p class="m-0 text-muted small">Showing 1 - 9 of 121</p>  #}
+        </div>
+        <div class="d-flex justify-content-end align-items-center mt-4 mt-lg-0 flex-column flex-md-row">
+            <!-- Filter Trigger-->
+            <button class="btn bg-light p-3 me-md-3 d-flex align-items-center fs-7 lh-1 w-100 mb-2 mb-md-0 w-md-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
+                <i class="ri-equalizer-line me-2"></i> Filters
+            </button>
+            <!-- / Filter Trigger-->
+            <!-- Sort Options-->
+            <select class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
+                <option selected="">Sort By</option>
+                <option value="1">Hi Low</option>
+                <option value="2">Low Hi</option>
+                <option value="3">Name</option>
+            </select>
+            <!-- / Sort Options-->
+        </div>
+    </div>
+    <!-- /Category Toolbar-->
+    <!-- Products-->
+    <div class="row g-4">
+
+{# product-<1-n> #}
+        {% for _ in "111111111111111" %}
+            
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+            <!-- Card Product-->
+            <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
+                <div class="card-img position-relative">
+                    {#  <div class="card-badges">
+                        <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
+                    </div>  #}
+                    <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
+                    <picture class="position-relative overflow-hidden d-block bg-light">
+                        <img class="w-100 img-fluid position-relative z-index-10 pexels" title="" src="www.placeholder.ccom" alt="">
+                    </picture>
+                    <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
+                        <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
+                    </div>
+                </div>
+                <div class="card-body px-0">
+                    <a class="text-decoration-none link-cover" href="./product">Product Name</a>
+                    <small class="text-muted d-block">quantity or other info</small>
+                    <p class="mt-2 mb-0 small"> <span class="text-danger"> &#8377;price</span></p>
+                </div>
+            </div>
+            <!--/ Card Product-->
+        </div>
+        {% endfor %}
+        <!-- Repeat similar blocks for other products -->
+
+
+    </div>
+    <!-- / Products-->
+    <!-- Pagination-->
+    <div class="d-flex flex-column f-w-44 mx-auto my-5 text-center">
+       {#  {% comment %} <small class="text-muted">Showing 9 of 121 products</small>
+        <div class="progress f-h-1 mt-3">
+            <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div> {% endcomment %} #}
+        <a href="#" class="btn btn-outline-dark btn-sm mt-5 align-self-center py-3 px-4 border-2">Load More</a>
+    </div>
+    <!-- / Pagination-->
+</div>
+<!-- /products -->
+
+
+
+
+
+    <!-- canvas -->
+
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+      <div class="offcanvas-header pb-0 d-flex align-items-center">
+        <h5 class="offcanvas-title" id="offcanvasFiltersLabel">Category Filters</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex flex-column justify-content-between w-100 h-100">
+    
+          <!-- Filters-->
+          <div>
+    
+            <!-- Price Filter -->
+            <div class="py-4 widget-filter widget-filter-price border-top">
+              <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+                data-bs-toggle="collapse" href="#filter-modal-price" role="button" aria-expanded="true"
+                aria-controls="filter-modal-price">
+                Price
+              </a>
+              <div id="filter-modal-price" class="collapse show">
+                <div class="filter-price mt-6"></div>
+                <div class="d-flex justify-content-between align-items-center mt-7">
+                    <div class="input-group mb-0 me-2 border">
+                        <span class="input-group-text bg-transparent fs-7 p-2 text-muted border-0"> &#8377;</span>
+                        <input type="number" min="00" max="1000" step="1" class="filter-min form-control-sm border flex-grow-1 text-muted border-0">
+                    </div>   
+                    <div class="input-group mb-0 ms-2 border">
+                        <span class="input-group-text bg-transparent fs-7 p-2 text-muted border-0"> &#8377;</span>
+                        <input type="number" min="00" max="1000" step="1" class="filter-max form-control-sm flex-grow-1 text-muted border-0">
+                    </div>                
+                </div>          </div>
+            </div>
+            <!-- / Price Filter -->
+    
+            <!-- Brands Filter -->
+            <div class="py-4 widget-filter border-top">
+              <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+                data-bs-toggle="collapse" href="#filter-modal-brands" role="button" aria-expanded="true"
+                aria-controls="filter-modal-brands">
+                Brands
+              </a>
+              <div id="filter-modal-brands" class="collapse show">
+                <div class="input-group my-3 py-1">
+                  <input type="text" class="form-control py-2 filter-search rounded" placeholder="Search"
+                    aria-label="Search">
+                  <span class="input-group-text bg-transparent p-2 position-absolute top-10 end-0 border-0 z-index-20"><i
+                      class="ri-search-2-line text-muted"></i></span>
+                </div>
+                <div class="simplebar-wrapper">
+                  <div class="filter-options" data-pixr-simplebar>
+                    <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-0">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-0">Adidas  <span
+                                class="text-muted ms-1 fs-9">(21)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-1">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-1">Asics  <span
+                                class="text-muted ms-1 fs-9">(13)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-2">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-2">Canterbury  <span
+                                class="text-muted ms-1 fs-9">(18)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-3">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-3">Converse  <span
+                                class="text-muted ms-1 fs-9">(25)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-4">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-4">Donnay  <span
+                                class="text-muted ms-1 fs-9">(11)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-5">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-5">Nike  <span
+                                class="text-muted ms-1 fs-9">(19)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-6">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-6">Millet  <span
+                                class="text-muted ms-1 fs-9">(24)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-7">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-7">Puma  <span
+                                class="text-muted ms-1 fs-9">(11)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-8">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-8">Reebok  <span
+                                class="text-muted ms-1 fs-9">(19)</span></label>
+                    </div>                <div class="form-group form-check-custom mb-1">
+                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-9">
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
+                            for="filter-brands-modal-9">Under Armour  <span
+                                class="text-muted ms-1 fs-9">(24)</span></label>
+                    </div>              </div>
+                </div>
+              </div>
+            </div>
+            <!-- / Brands Filter -->
+    
+            <!-- Sizes Filter -->
+            <div class="py-4 widget-filter border-top">
+              <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+                data-bs-toggle="collapse" href="#filter-modal-sizes" role="button" aria-expanded="true"
+                aria-controls="filter-modal-sizes">
+                Quantity (ml)
+              </a>
+              <div id="filter-modal-sizes" class="collapse show">
+                <div class="filter-options mt-3">
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-0">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-0">100</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-1">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-1">150</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-2">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-2">200</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-3">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-3">250</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-4">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-4">300</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-5">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-5">350</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-6">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-6">400</label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-2 mb-2 form-check-bg form-check-custom">
+                      <input type="checkbox" class="form-check-bg-input" id="filter-sizes-modal-7">
+                      <label class="form-check-label fw-normal" for="filter-sizes-modal-7">500</label>
+                  </div>              
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / Sizes Filter -->
+    
+            <!-- Colour Filter -->
+          {#   {% comment %} <div class="py-4 widget-filter border-top">
+              <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
+                data-bs-toggle="collapse" href="#filter-modal-colour" role="button" aria-expanded="true"
+                aria-controls="filter-modal-colour">
+                Colour
+              </a>
+              <div id="filter-modal-colour" class="collapse show">
+                <div class="filter-options mt-3">
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-primary">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-0">
+                      <label class="form-check-label" for="filter-colours-modal-0"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-success">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-1">
+                      <label class="form-check-label" for="filter-colours-modal-1"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-danger">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-2">
+                      <label class="form-check-label" for="filter-colours-modal-2"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-info">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-3">
+                      <label class="form-check-label" for="filter-colours-modal-3"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-warning">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-4">
+                      <label class="form-check-label" for="filter-colours-modal-4"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-dark">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-5">
+                      <label class="form-check-label" for="filter-colours-modal-5"></label>
+                  </div>              
+                  <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-secondary">
+                      <input type="checkbox" class="form-check-color-input" id="filter-colours-modal-6">
+                      <label class="form-check-label" for="filter-colours-modal-6"></label>
+                  </div>            
+                </div>
+              </div>
+            </div> {% endcomment %} #}
+            <!-- / Colour Filter -->
+          </div>
+          <!-- / Filters-->
+    
+          <!-- Filter Button-->
+          <div class="border-top pt-3">
+            <a href="#" class="btn btn-dark mt-2 d-block hover-lift-sm hover-boxshadow" data-bs-dismiss="offcanvas" aria-label="Close">Done</a>
+          </div>
+          <!-- /Filter Button-->
+        </div>
+      </div>
+    </div>
+
+
+<script>
+    // Select all images with class 'pexels'
+    const images = document.querySelectorAll('.pexels');
+
+    // Function to fetch random image for each image tag
+    function fetchRandomImage(imageElement) {
+        // Randomize query slightly or use different terms to get diverse results
+        const query = 'siddha aurvadha medicine product';  // Same query for all, but randomizing images by page number
+
+        // Use a random page number for each request to get different images
+        const page = Math.floor(Math.random() * 100) + 1; // Random page between 1 and 100
+
+        fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${page}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'BEZHK7iMmhfnXgrL50JIQOdjLqJJBTPUMw3ugHNeDX6H7NpsOpBzNWie' // Replace with your Pexels API key
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.photos.length > 0) {
+                    // Get the URL of the first image and set its size
+                    const imgUrl = data.photos[0].src.medium; // Use 'medium' size to ensure uniformity
+
+                    // Set the src attribute of the image tag
+                    imageElement.src = imgUrl;
+
+                    // After the image is loaded, set the width and height
+                    imageElement.onload = function () {
+                        imageElement.style.width = '300px';  // Set the desired width
+                        imageElement.style.height = '200px'; // Set the desired height
+                        imageElement.style.objectFit = 'cover';  // Ensure images cover the space without distortion
+                    }
+                } else {
+                    console.error('No images found for this query on page ' + page);
+                }
+            })
+            .catch(error => console.error('Error fetching image:', error));
+    }
+
+    // Loop through all images with the class 'pexels' and fetch a random image for each
+    images.forEach(image => fetchRandomImage(image));
+</script>
+
+
+
+
+    <!-- /canvas -->
+{% endblock main %}
