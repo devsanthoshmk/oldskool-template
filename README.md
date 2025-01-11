@@ -1,104 +1,35 @@
 
-# **add medicine placceholder(likewise in index.html) use the script tag in index.html and in img class add pexels**
+# **THIS IS DEV BRANCH FEATURES IN PROCESS COMES HERE**
 
 
 
 # E-Commerce Website
 
-A responsive, full-stack e-commerce application
 
 ## Installation
 
-### Prerequisites
-  - django
-  - django entension(eg:django for vs code)
-
-### Steps
-  
-1. Clone the repository:
+  - First go to eleventy folder
   ```bash
-   git clone https://github.com/devsanthoshmk/oldskool-template.git
-   cd oldskool-template
+    cd eleventy
   ```
-2. Go to django folder:
+
+  - Install requirements by
   ```bash
-  cd templ-django
-  ``` 
-3. Open in IDE(optinal if you just wanna see/run):
-  ```bash
-  code .  #vs code
+    npm install
   ```
-  for other IDE
+
+## Contribution
+
+  - open vs code
   ```bash
-  subl .  #sublime text
+    code .
   ```
-   or follow your IDE guide...
-   
-4. Activate virtual env:
+
+  - run dev server(in any terminal under eleventy folder)
   ```bash
-  python -m venv templ
+    npm run serve
   ```
-  on Windows,
-  ```bash
-  templ\Scripts\activate
-  ```
-  On Unix or MacOS,
-  ```bash
-  source tutorial-env/bin/activate
-  ```
-5. Install requirements:
-  ```bash
-  python -m pip install requirements.txt
-  ```
-7. Enter into Django project
-  ```bash
-  cd templete 
-  ```
-8. To run dev server:
-  depend on your IDE run this in integrated terminal or system terminal/cmd
-  ```bash
-  python manage.py runserver
-  ```
-  open the spicified link in browser(example: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)) 
 
----
+  - Go to templates folder you can find html files....
 
-# Contribution
-## basic
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Commit your changes (`git commit -m 'Add your feature here'`).
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a pull request.
-
-## Coding Guide
-- **oldskool-html-bootstrap** contains original build you can follow instructins form [oldskool-html-bootstrap](https://github.com/PixelRocket-Shop/oldskool-html-bootstrap)
-    one can find original templates in dist folder
-- **templ-django** contains django app of oldskool template to edit the page go to `./templ-django/templete/products/templates/products`
-    if you want to edit styles/script -> `/templ-django/templete/products/static/products`
-- **templete** contains modifing template if you find the `.html` you want to edit in `./templ-django/templete/products/templates/products` then it is recommened to edit there
-  otherwise edit here (Note: chages here is not final it will again redone based on the changes done here)
-  
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Contact
-
-For questions or feedback, feel free to reach out:
-
-- **Email**: connectwithsanthoshmk@gmail.com
-- **Email**: dr.kavi21k@gmail.com
----
-
-## Acknowledgments
-
-- [Inspiration or helpful resources](https://github.com/PixelRocket-Shop/oldskool-html-bootstrap)
-- [Libraries or tools used](https://docs.djangoproject.com/en/5.1)
-
---- 
-
+# ** Changes will reflect on the go in the browser while the dev server is active no need to restart **
