@@ -1,0 +1,32 @@
+[
+    {
+        "small_title": "Herbal Remedies",
+        "large_title": "Siddha Essentials",
+        "button_text": "Explore Now",
+        "img": "assets/images/categories/category-1.jpg"
+    },
+    {
+        "small_title": "Ayurvedic Formulations",
+        "large_title": "Daily Wellness",
+        "button_text": "Shop Now",
+        "img": "assets/images/categories/category-2.jpg"
+    },
+    {
+        "small_title": "Holistic Care",
+        "large_title": "Body Oils & Balms",
+        "button_text": "Learn More",
+        "img": "assets/images/categories/category-3.jpg"
+    },
+    {
+        "small_title": "Natural Immunity Boost",
+        "large_title": "Herbal Tonics",
+        "button_text": "Shop Now",
+        "img": "assets/images/categories/category-4.jpg"
+    },
+    {
+        "small_title": "Skin & Hair Care",
+        "large_title": "Natural Cosmetics",
+        "button_text": "Browse Products",
+        "img": "assets/images/categories/category-5.jpg"
+    }
+]

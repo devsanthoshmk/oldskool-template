@@ -14,7 +14,6 @@
 
 
 {% extends "base.html" %}
-
 {%block main%}
 <div id='content'>
 
@@ -45,19 +44,20 @@
                 }
               }'>
               <div class="swiper-wrapper">
-                {%for i in "1234"%}
+
+                {% for slide in slides %}
                 <!-- Slide-->
                 <div class="swiper-slide position-relative h-100 w-100">
                   <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
                     <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden " data-swiper-parallax="-100"
-                      style=" will-change: transform; background-image: url('https://picsum.photos/800/1200?random={{i}}')">
+                      style=" will-change: transform; background-image: url('{% static slide.url %}')">
                     </div>
                   </div>
                   <div
                     class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                    <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">catchphrase</p>
+                    <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">{{slide.c1}}</p>
                     <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white" data-swiper-parallax="100">
-                      <span class="text-outline-light">catchphrase</span> catchphrase</h2>
+                      <span class="text-outline-light">{{slide.c2}}</span> {{slide.c3}}</h2>
                     <div data-swiper-parallax-y="-25">
                       <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop</a>
                     </div>
@@ -223,15 +223,15 @@
                         }
                       }' style="padding-right: 3.6rem">
                       <div class="swiper-wrapper">
-                        {% for _ in "1111" %}
+                        {% for product in spl_products %}
                           <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                             <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
                                 <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100 pexels" title="" src="{% static 'assets/images/categories/category-4.jpg' %}/" alt="HTML Bootstrap Template by Pixel Rocket">
+                                    <img class="w-100 pexels" title="" src="{% static product.img %}" alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
-                                <h4 class="lead fw-bold">Jackets &amp; Coats</h4>
-                                <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                                <p class="title-small mb-2 text-muted">{{ product.small_title }}</p>
+                                <h4 class="lead fw-bold">{{ product.large_title }}</h4>
+                                <a href="./category.html" class="btn btn-psuedo align-self-start">{{ product.button_text }}</a>
                             </div>
                           </div>
                           {%endfor%}
@@ -293,28 +293,46 @@
     <div class="row g-4">
 
 {# product-<1-n> #}
-        {% for _ in "111111111111111" %}
+        {% for product in products %}
             
-        
         <div class="col-12 col-sm-6 col-lg-4">
+        
             <!-- Card Product-->
             <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
                 <div class="card-img position-relative">
-                    {#  <div class="card-badges">
-                        <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
-                    </div>  #}
+                      <div class="card-badges">
+                        {%if product.sale_price%}
+                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
+                        {% endif %} 
+                        {%if product.new%}
+                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-success rounded-circle d-block me-1"></span>High Demand</span>
+                        {% endif %}
+                        {%if product.sold_out%}
+                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-secondary rounded-circle d-block me-1"></span> Sold Out</span>
+                        {% endif %} 
+                    </div>  
                     <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
                     <picture class="position-relative overflow-hidden d-block bg-light">
-                        <img class="w-100 img-fluid position-relative z-index-10 pexels" title="" src="www.placeholder.ccom" alt="">
+                        <img class="w-100 img-fluid position-relative z-index-10 pexels" title="" src="{%static product.img%}" alt="">
                     </picture>
-                    <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
-                        <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
-                    </div>
+                    {%if not product.sold_out%}
+                        <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
+                            <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="card-body px-0">
-                    <a class="text-decoration-none link-cover" href="./product">Product Name</a>
-                    <small class="text-muted d-block">quantity or other info</small>
-                    <p class="mt-2 mb-0 small"> <span class="text-danger"> &#8377;price</span></p>
+                    <a class="text-decoration-none link-cover" href="/product">{{ product.title }}</a>
+                    <small class="text-muted d-block">{{ product.options }}</small>
+                    {%if product.sold_out%}
+                        <p class="mt-2 mb-0 small text-muted">Sold Out</p>
+                    {%else%}
+                        {%if product.offer_price%}
+                            <p class="mt-2 mb-0 small"><s class="text-muted">{{ product.currency }} {{ product.price }}</s> <span class="text-danger">{{ product.currency }}{{ product.offer_price }}</span></p>
+                        {%else%}
+                            <p class="mt-2 mb-0 small">{{ product.currency }}{{ product.price }}</p>
+                        {% endif %}
+                    {% endif %}
                 </div>
             </div>
             <!--/ Card Product-->
@@ -550,8 +568,8 @@
       </div>
     </div>
 
-
-<script>
+{#
+ <script>
     // Select all images with class 'pexels'
     const images = document.querySelectorAll('.pexels');
 
@@ -566,7 +584,7 @@
         fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${page}`, {
             method: 'GET',
             headers: {
-                'Authorization': 'BEZHK7iMmhfnXgrL50JIQOdjLqJJBTPUMw3ugHNeDX6H7NpsOpBzNWie' // Replace with your Pexels API key
+                'Authorization': 'BEZHK7iMmhfnXgrL50JIQOdjLqJJBTPUMw3ugHNeDX6H7NpsOpBzNWie' 
             }
         })
             .then(response => response.json())
@@ -594,7 +612,7 @@
     // Loop through all images with the class 'pexels' and fetch a random image for each
     images.forEach(image => fetchRandomImage(image));
 </script>
-
+#}
 
 
 </div>
