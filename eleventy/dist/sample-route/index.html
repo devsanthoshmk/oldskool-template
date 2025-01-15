@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vanilla.js | SPA Routing Example</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/products/some-product-name">Some Product Name</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/dashboard/overview">Dashboard Overview</a></li>
+      <li><a href="/dashboard/settings">Dashboard Settings</a></li>
+    </ul>
+  </nav>
+
+  <div id="app">
+    <!-- Content will be rendered here -->
+  </div>
+
+  <script>
+    class Home {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>Home</h2>';
+        return container;
+      }
+    }
+
+    class About {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>About</h2>';
+        return container;
+      }
+    }
+
+    class Products {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>Products</h2>';
+        return container;
+      }
+    }
+
+    class ProductDetails {
+      constructor(params) {
+        this.params = params;
+      }
+
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = `<h2>Product Details</h2>
+                               <p>Product ID: ${this.params.id}</p>`;
+        return container;
+      }
+    }
+
+    class Dashboard {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>Dashboard</h2>';
+        return container;
+      }
+    }
+
+    class DashboardOverview {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>Dashboard Overview</h2>';
+        return container;
+      }
+    }
+
+    class DashboardSettings {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>Dashboard Settings</h2>';
+        return container;
+      }
+    }
+
+    class NotFound {
+      render() {
+        const container = document.createElement('div');
+        container.innerHTML = '<h2>404 Page Not Found</h2>';
+        return container;
+      }
+    }
+
+    const routes = {
+      '/': Home,
+      '/about': About,
+      '/products': Products,
+      '/products/:id': ProductDetails,
+      '/dashboard': Dashboard,
+      '/dashboard/overview': DashboardOverview,
+      '/dashboard/settings': DashboardSettings,
+    };
+
+    function extractParams(route, path) {
+      const routeParts = route.split('/');
+      const pathParts = path.split('/');
+
+      const params = {};
+
+      routeParts.forEach((part, index) => {
+        if (part.startsWith(':')) {
+          const paramName = part.slice(1);
+          params[paramName] = pathParts[index];
+        }
+      });
+
+      return params;
+    }
+
+    function renderComponent(component, params) {
+      const appContainer = document.getElementById('app');
+      appContainer.innerHTML = '';
+
+      const instance = new component(params);
+      appContainer.appendChild(instance.render());
+    }
+
+    function router() {
+      const path = window.location.pathname;
+
+      let matchedRoute = null;
+      let matchedParams = {};
+
+      Object.keys(routes).forEach(route => {
+        const routeRegex = new RegExp(`^${route.replace(/:\w+/g, '[^/]+')}$`);
+        if (routeRegex.test(path)) {
+          matchedRoute = route;
+          matchedParams = extractParams(route, path);
+        }
+      });
+
+      if (matchedRoute) {
+        const component = routes[matchedRoute];
+        renderComponent(component, matchedParams);
+      } else {
+        renderComponent(NotFound);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', router);
+    window.addEventListener('popstate', router);
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const path = link.getAttribute('href');
+        window.history.pushState({}, '', path);
+
+        router();
+      });
+    });
+  </script>
+</body>
+</html>
