@@ -1,0 +1,30 @@
+[
+	{
+		"url":"assets/images/banners/banner-1.jpg",
+		"c1":"catchphrase-1",
+		"c2":"catchphrase-2",
+		"c3":"catchphrase-3",
+		"c4":"catchphrase-4"
+	},
+	{
+		"url":"assets/images/banners/banner-2.jpg",
+		"c1":"catchphrase-1",
+		"c2":"catchphrase-2",
+		"c3":"catchphrase-3",
+		"c4":"catchphrase-4"
+	},
+	{
+		"url":"assets/images/banners/banner-3.jpg",
+		"c1":"catchphrase-1",
+		"c2":"catchphrase-2",
+		"c3":"catchphrase-3",
+		"c4":"catchphrase-4"
+	},
+	{
+		"url":"assets/images/banners/banner-4.jpg",
+		"c1":"catchphrase-1",
+		"c2":"catchphrase-2",
+		"c3":"catchphrase-3",
+		"c4":"catchphrase-4"
+	}
+]
