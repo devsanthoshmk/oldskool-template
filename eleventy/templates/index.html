@@ -15,7 +15,7 @@
 
 {% extends "base.html" %}
 {%block main%}
-<div id='content'>
+<div id="content">
 
     <section class="mt-0 overflow-hidden ">
         <!-- Page Content Goes Here -->
@@ -614,7 +614,15 @@
 </script>
 #}
 
+    <script type="text/javascript">
 
-</div>
+        const products= {{ products | dump | safe }};
+        console.log(products);
+
+    </script>
+
+    <script></script>
+
     <!-- /canvas -->
+</div>
 {% endblock main %}

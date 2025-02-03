@@ -1,5 +1,5 @@
 const routes = [
-      '/home',
+      '/index',
       '/product',
       '/cart',
       '/checkout',
@@ -28,8 +28,8 @@ function extractParams(route, path) {
 }
 
 function renderComponent(matchedRoute, params) {
-  const appContainer = document.getElementById('main');
-  appContainer.innerHTML = '';
+  const appContainer = document.getElementById('content');
+  // appContainer.innerHTML = '<h1>Loading....<h1>';
 
   // const instance = new component(params);
   fetch(matchedRoute)
@@ -40,10 +40,12 @@ function renderComponent(matchedRoute, params) {
     return response.text(); // Parse the response as JSON
   })
   .then((html) => {
-    const doc = parser.parseFromString(html, 'text/html');
-    content=doc.querySelector('#content').innerHTML;
+    console.log(html.slice(9000,18180));
+    console.log(html.slice(-2517,-1000));
+    let content= html.slice(18180,-2517);
     appContainer.innerHTML = content;     // Append the element to the container
     // appContainer.innerHTML = html;     // Append the element to the container
+    document.dispatchEvent(new Event("DOMContentLoaded"));
 
   })
   .catch((error) => {
@@ -74,7 +76,7 @@ function router() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', router);
+// window.addEventListener('DOMContentLoaded', router);
 window.addEventListener('popstate', router);
 
 const links = document.querySelectorAll('.route');

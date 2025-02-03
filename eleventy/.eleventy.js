@@ -22,6 +22,7 @@ export default function(eleventyConfig) {
 
     // JS files
     eleventyConfig.addWatchTarget('static/assets/js/route.js');
+    eleventyConfig.addPassthroughCopy('static/assets/js/route.js');
     eleventyConfig.addPassthroughCopy('static/assets/js/theme.bundle.js');
     eleventyConfig.addPassthroughCopy('static/assets/js/vendor.bundle.js');
    
