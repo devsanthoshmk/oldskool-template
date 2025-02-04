@@ -290,54 +290,36 @@
     </div>
     <!-- /Category Toolbar-->
     <!-- Products-->
-    <div class="row g-4">
+    <div id="products" class="row g-4">
 
 {# product-<1-n> #}
-        {% for product in products %}
-            
-        <div class="col-12 col-sm-6 col-lg-4">
+    {% for _ in "1234" %}
         
-            <!-- Card Product-->
-            <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
-                <div class="card-img position-relative">
-                      <div class="card-badges">
-                        {%if product.sale_price%}
-                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
-                        {% endif %} 
-                        {%if product.new%}
-                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-success rounded-circle d-block me-1"></span>High Demand</span>
-                        {% endif %}
-                        {%if product.sold_out%}
-                            <span class="badge badge-card"><span class="f-w-2 f-h-2 bg-secondary rounded-circle d-block me-1"></span> Sold Out</span>
-                        {% endif %} 
-                    </div>  
-                    <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i class="ri-heart-line"></i></span>
-                    <picture class="position-relative overflow-hidden d-block bg-light">
-                        <img class="w-100 img-fluid position-relative z-index-10 pexels" title="" src="{%static product.img%}" alt="">
-                    </picture>
-                    {%if not product.sold_out%}
-                        <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
-                            <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="card-body px-0">
-                    <a class="text-decoration-none link-cover" href="/product">{{ product.title }}</a>
-                    <small class="text-muted d-block">{{ product.options }}</small>
-                    {%if product.sold_out%}
-                        <p class="mt-2 mb-0 small text-muted">Sold Out</p>
-                    {%else%}
-                        {%if product.offer_price%}
-                            <p class="mt-2 mb-0 small"><s class="text-muted">{{ product.currency }} {{ product.price }}</s> <span class="text-danger">{{ product.currency }}{{ product.offer_price }}</span></p>
-                        {%else%}
-                            <p class="mt-2 mb-0 small">{{ product.currency }}{{ product.price }}</p>
-                        {% endif %}
-                    {% endif %}
-                </div>
+<div class="col-12 col-sm-6 col-lg-3">
+    <!-- Card Product Skeleton -->
+    <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
+        <div class="card-img position-relative">
+            {# <!-- Skeleton Badges -->
+            <div class="card-badges">
+                <span class="badge skeleton-badge skeleton"></span>
+                <span class="badge skeleton-badge skeleton"></span>
+            </div> #}
+            
+            <!-- Skeleton Image -->
+            <div class="position-relative overflow-hidden d-block bg-light skeleton-image-container">
+                <div class="skeleton-image skeleton"></div>
             </div>
-            <!--/ Card Product-->
         </div>
-        {% endfor %}
+        <div class="card-body px-0">
+            <!-- Skeleton Text -->
+            <div class="skeleton-line skeleton mb-2"></div>
+            <div class="skeleton-line skeleton short"></div>
+            <div class="skeleton-line skeleton price"></div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+
         <!-- Repeat similar blocks for other products -->
 
 
@@ -349,7 +331,8 @@
         <div class="progress f-h-1 mt-3">
             <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div> {% endcomment %} #}
-        <a href="#" class="btn btn-outline-dark btn-sm mt-5 align-self-center py-3 px-4 border-2">Load More</a>
+        <button onclick="load()" id="lm-btn" class="btn btn-outline-dark btn-sm mt-5 align-self-center py-3 px-4 border-2">Load More</button>
+
     </div>
     <!-- / Pagination-->
 </div>
@@ -614,15 +597,197 @@
 </script>
 #}
 
-    <script type="text/javascript">
-
-        const products= {{ products | dump | safe }};
-        console.log(products);
-
-    </script>
-
-    <script></script>
+    
 
     <!-- /canvas -->
 </div>
+
+    <script type="text/javascript">
+
+        // const products= {{ products | dump | safe }};
+        // console.log(products);
+
+        const container = document.querySelector("#products");
+
+        function renderProducts(products) {
+          if (!container) return;
+
+          let productsHTML = '';
+
+          products.forEach(product => {
+              // Generate Badges
+              let badgesHTML = '';
+              if (product.sale_price) {
+                  badgesHTML += `
+                      <span class="badge badge-card">
+                          <span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale
+                      </span>
+                  `;
+              }
+              if (product.new) {
+                  badgesHTML += `
+                      <span class="badge badge-card">
+                          <span class="f-w-2 f-h-2 bg-success rounded-circle d-block me-1"></span> High Demand
+                      </span>
+                  `;
+              }
+              if (product.sold_out) {
+                  badgesHTML += `
+                      <span class="badge badge-card">
+                          <span class="f-w-2 f-h-2 bg-secondary rounded-circle d-block me-1"></span> Sold Out
+                      </span>
+                  `;
+              }
+
+              // Quick Add Button
+              const quickAddHTML = !product.sold_out ? `
+                  <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
+                      <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
+                  </div>
+              ` : '';
+
+              // Price Display Logic
+              let priceHTML;
+              if (product.sold_out) {
+                  priceHTML = `<p class="mt-2 mb-0 small text-muted">Sold Out</p>`;
+              } else {
+                  priceHTML = product.offer_price 
+                      ? `<p class="mt-2 mb-0 small"><s class="text-muted">${product.currency} ${product.price}</s> <span class="text-danger">${product.currency}${product.offer_price}</span></p>`
+                      : `<p class="mt-2 mb-0 small">${product.currency}${product.price}</p>`;
+              }
+
+              // Build Product Card
+              const productHTML = `
+                  <div class="col-12 col-sm-6 col-lg-3">
+                      <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
+                          <div class="card-img position-relative">
+                              <div class="card-badges">
+                                  ${badgesHTML}
+                              </div>
+                              <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted">
+                                  <i class="ri-heart-line"></i>
+                              </span>
+                              <picture class="position-relative overflow-hidden d-block bg-light">
+                                  <img class="w-100 img-fluid position-relative z-index-10 pexels" 
+                                       src="${product.img}" 
+                                       alt="${product.title}" 
+                                       title="${product.title}">
+                              </picture>
+                              ${quickAddHTML}
+                          </div>
+                          <div class="card-body px-0">
+                              <a class="text-decoration-none link-cover" href="/product">${product.title}</a>
+                              <span class="text-secondary">| By ${product.brand}</span>
+                              <small class="text-muted d-block">${product.options}</small>
+                              ${priceHTML}
+                          </div>
+                      </div>
+                  </div>
+              `;
+              productsHTML += productHTML;
+          });
+
+          container.innerHTML += productsHTML;
+      }
+
+        function load(n=15){
+            if (products.length!==0){
+            renderProducts(products.splice(0,n));
+            } else {
+                const loadMoreButton = document.querySelector('#lm-btn');
+                loadMoreButton.className = 'btn btn-danger disabled mt-5 align-self-center py-3 px-4 border-0';
+
+                loadMoreButton.textContent = 'No more products to load';
+                loadMoreButton.style.pointerEvents = 'none';
+
+                setTimeout(() => {
+                    loadMoreButton.remove(); // Removes the button element from the DOM
+                    console.log('Button removed after 5 seconds');
+                }, 5000);
+
+            }
+        }
+
+
+        let products=[];
+
+
+        fetch("data/products.json")
+        .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Parse the response as JSON
+        })
+        .then((rawProducts) => {
+            products=rawProducts;
+            container.innerHTML=``;
+            load(5);
+        // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
+        })
+    </script>
+
+
+<style>
+    .skeleton {
+        background-color: #e9ecef;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .skeleton::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, 
+            rgba(255,255,255,0) 0%, 
+            rgba(255,255,255,0.9) 50%,  /* Increased opacity */
+            rgba(255,255,255,0) 100%);
+        animation: skeletonShimmer 1.2s infinite;
+    }
+
+    .skeleton-image-container {
+        position: relative;
+        padding-top: 80%; /* Common product image aspect ratio */
+    }
+
+    .skeleton-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .skeleton-line {
+        height: 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.25rem;
+    }
+
+    .skeleton-line.short {
+        width: 60%;
+    }
+
+    .skeleton-line.price {
+        width: 40%;
+        height: 1.25rem;
+    }
+
+    .skeleton-badge {
+        width: 70px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 0.5rem;
+        border-radius: 20px;
+    }
+
+    @keyframes skeletonShimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+</style>
 {% endblock main %}

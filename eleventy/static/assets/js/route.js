@@ -45,7 +45,10 @@ function renderComponent(matchedRoute, params) {
     let content= html.slice(18180,-2517);
     appContainer.innerHTML = content;     // Append the element to the container
     // appContainer.innerHTML = html;     // Append the element to the container
+    window.removeEventListener('DOMContentLoaded', safeRouter);
     document.dispatchEvent(new Event("DOMContentLoaded"));
+    window.addEventListener('DOMContentLoaded',safeRouter);
+
 
   })
   .catch((error) => {
@@ -75,8 +78,12 @@ function router() {
     // renderComponent(NotFound);
   }
 }
-
-// window.addEventListener('DOMContentLoaded', router);
+function safeRouter() {
+  if (!first) router();
+  else first=false;
+}
+let first=true;
+window.addEventListener('DOMContentLoaded',safeRouter);
 window.addEventListener('popstate', router);
 
 const links = document.querySelectorAll('.route');

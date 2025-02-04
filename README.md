@@ -1,4 +1,29 @@
 
+https://uiverse.io/Nawsome/spicy-wolverine-85 with out loader__ball
+
+
+# Those function(sort,filter....) format:
+
+``` js
+   funciton sort_by_price(reverse=false){
+		if (!reverse){
+			//{
+			//low to high logic 
+			//}
+         } else {
+        //high to low
+        }
+
+			// now change products array within that sorting logic and that's it!!!
+
+			//calling the load funtion to renderProducts with load more button in mind here you dont need to do anythin
+
+			load();
+		}
+	}
+}
+```
+
 # **THIS IS DEV BRANCH FEATURES IN PROCESS COMES HERE**
 
 

@@ -29,6 +29,9 @@ export default function(eleventyConfig) {
     // SVGs folder
     eleventyConfig.addPassthroughCopy('static/assets/svgs');
 
+    //for datas
+    eleventyConfig.addPassthroughCopy('templates/data/products.json')
+
     //for jsons in data folder
     // eleventyConfig.addWatchTarget('./data'); // Add your new data directory
 
