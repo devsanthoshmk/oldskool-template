@@ -1,0 +1,637 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"x_",
+				"x_warn"
+			],
+			[
+				"y",
+				"y_warn"
+			],
+			[
+				"wi",
+				"wishlist"
+			],
+			[
+				"ch",
+				"checkout-shopping"
+			],
+			[
+				"che",
+				"checkout-shipping"
+			],
+			[
+				"ck",
+				"checkout-shipping"
+			],
+			[
+				"ja",
+				"javascript"
+			],
+			[
+				"jav",
+				"javascript"
+			],
+			[
+				"req",
+				"request_header"
+			],
+			[
+				"In",
+				"IndexError"
+			],
+			[
+				"json",
+				"json_data"
+			],
+			[
+				"d",
+				"dumps"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"i",
+				"itemprop"
+			],
+			[
+				"name",
+				"__name__"
+			],
+			[
+				"lo",
+				"loads"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"sa",
+				"safeRouter"
+			],
+			[
+				"rou",
+				"route"
+			],
+			[
+				"ali",
+				"align-items-center"
+			],
+			[
+				"jus",
+				"justify-content-center"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"pr",
+				"products"
+			],
+			[
+				"q",
+				"querySelector"
+			],
+			[
+				"no",
+				"notRem"
+			],
+			[
+				"loca",
+				"locator"
+			],
+			[
+				"inn",
+				"innerHTML"
+			],
+			[
+				"quey",
+				"querySelector"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"sub",
+				"substring"
+			],
+			[
+				"p",
+				"pexels"
+			],
+			[
+				"ima",
+				"imageElement"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"bloc",
+				"block\tblock"
+			],
+			[
+				"inc",
+				"include\tinclude"
+			],
+			[
+				"ex",
+				"extends\textends"
+			],
+			[
+				"sta",
+				"static\tstatic"
+			],
+			[
+				"s",
+				"static"
+			],
+			[
+				"reque",
+				"request"
+			],
+			[
+				"urlpa",
+				"URLPattern"
+			],
+			[
+				"Htt",
+				"HttpResponse"
+			],
+			[
+				"pos",
+				"post_id"
+			],
+			[
+				"temp",
+				"template"
+			],
+			[
+				"hander",
+				"handler404"
+			],
+			[
+				"in",
+				"insert"
+			],
+			[
+				"inde",
+				"IndexError"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Python 3/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"LiveReload",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"preferences: pack",
+				"Preferences: Package Control Settings"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"python",
+				"SublimeREPL: Python"
+			],
+			[
+				"repl:p",
+				"SublimeREPL: Python"
+			],
+			[
+				"repl:py",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"he",
+				"Helium: List Kernels"
+			],
+			[
+				"repl: p",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"sett",
+				"Preferences: Settings"
+			],
+			[
+				"Snippet: html",
+				"Snippet: html"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"pre",
+				"Preferences: Package Control Settings"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"black",
+				"python-black: Create Black Configuration File"
+			],
+			[
+				"color",
+				"UI: Customize Color Scheme"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"preferences",
+				"Preferences: Settings"
+			],
+			[
+				"Preferences : Package Settings ",
+				"Preferences: Package Control Settings"
+			],
+			[
+				"prefere ",
+				"Preferences: LSP Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy"
+	],
+	"file_history":
+	[
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/hakerrank/valid_parenthesis.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/hakerrank/gcd.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/hakerrank/xToY.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/hakerrank/minion_game.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/hakerrank/xor.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/findCommon.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/includes/base.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/.eleventy.js",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/static/assets/js/route.js",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/README.md",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/dist/findCommon/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/base.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/common_top.html",
+		"/home/santhosh/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+		"/home/santhosh/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/after_login.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/get_data1.json",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/get_data1.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/search_results_html.json",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/search_results_html.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/url_header.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/search_results.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/test-rent\\.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/search_results.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/nobroker data scrape/test_rent/.js",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/includes/nav.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/includes/footer.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/cart.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/data/products.json",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/dist/product/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/dist/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/del.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/happy-number.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/home.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/dist/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/partials/swiper/swiper-homepage-hero.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/partials/header/navbar/dropdown-links-one.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/data/products.json",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/partials/swiper/swiper-homepage-categories.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/data/homepage-categories.json",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/data/category-products.json",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/partials/product/product-info.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/html/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-html-bootstrap/src/partials/listing-cards/listing-card.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/PlacesData in vuejs/PlacesData/package.json",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/PlacesData in vuejs/PlacesData/src/App.vue",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/PlacesData in vuejs/PlacesData/src/main.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/PlacesData in vuejs/PlacesData/src/gmap_data.js",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/sample-route.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/product.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/checkout.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/register.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/checkout-payment.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/login.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/forgotten-password.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy/templates/checkout-shipping.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/cors-proxy/main.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/cors-proxy/analise.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/cors-proxy/header.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/async_axios_cheerio.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/del-from-axios.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/del.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/builtin_async.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/builtin_async",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/PROJECTS/MAP PROJECT/gmap scraping in browser/async_final.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/cart.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/.eleventy.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/login.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/node_modules/@11ty/eleventy/src/Util/ProjectDirectories.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/node_modules/@11ty/eleventy/src/TemplateCache.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/node_modules/@11ty/eleventy/src/EleventyFiles.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/register.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/checkout-payment.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/eleventy/templates/forgotten-password.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/nunjucks/templates/base.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/nunjucks/templates/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/nunjucks/server.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/nunjucks/templates/includes/nav.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/nunjucks/templates/includes/footer.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/tmpl/Lib/site-packages/django/__init__.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/tmpl/Lib/site-packages/django/test/testcases.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/tmpl/Lib/site-packages/django/test/utils.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templete/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/templete/urls.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/urls.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/includes/footer.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/login.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/forgotten-password.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/includes/no-nav-foo.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/checkout.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/checkout-shipping.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/checkout-payment.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/base.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/cart.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/includes/nav.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/register.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/product.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/templates/products/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/products/views.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/templete/settings.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templ-django/templete/templete/views.py",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templete/category.html",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templete/note.txt",
+		"/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/templete/assets/css/theme.bundle.css",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/PlacesData in vuejs/PlacesData/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/PlacesData in vuejs/PlacesData/src/main.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/PlacesData in vuejs/PlacesData/src/App.vue",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/PlacesData in vuejs/PlacesData/src/components/HelloWorld.vue",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/gmap scraping in browser/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/projects/gmap scraping in browser/async_final.js",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/urls.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/templates/base.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/myapp/settings.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/myapp/urls.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/templates/404.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/myapp/views.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/templates/index.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/templates/detail.html",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/static/style.css",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/LEARNINGS/django-basics/myapp/blog/views.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/third-maximum-number.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/plus-one.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/length-of-last-word.py",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/pyproject.toml",
+		"/home/santhosh/EDUCATION CONTENTS/1.Programing/leetcode/valid-parentheses.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 113.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/santhosh/EDUCATION CONTENTS/NaSKo/oldskool-templ/eleventy"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 266.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python 3/Python3.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 255.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

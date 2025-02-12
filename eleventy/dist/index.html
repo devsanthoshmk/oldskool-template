@@ -689,11 +689,11 @@
             </button>
             <!-- / Filter Trigger-->
             <!-- Sort Options-->
-            <select class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
+            <select id="sortSelect" onchange="sortIt(this.value,this.selectedOptions[0].dataset.a)" class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
                 <option selected="">Sort By</option>
-                <option value="1">Hi Low</option>
-                <option value="2">Low Hi</option>
-                <option value="3">Name</option>
+                <option value="price" data-a="false">Hi → Low</option>
+                <option value="price" data-a="true">Low → Hi</option>
+                <option value="title" data-a="true">Name</option>
             </select>
             <!-- / Sort Options-->
         </div>
@@ -978,9 +978,6 @@
         </div>
       </div>
     </div>
-
-
-
     
 
     <!-- /canvas -->
@@ -988,15 +985,19 @@
 
     <script type="text/javascript">
 
-        // const products= [{"title":"Siddha Herbal Oil","price":"329.99","offer_price":"198.66","currency":"$","options":"100ml, 200ml, 500ml","img":"https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg","brand":"some Brand"},{"title":"Ayurveda Immunity Booster","price":"275.45","new":true,"currency":"$","options":"60 capsules, 120 capsules","img":"https://images.pexels.com/photos/13787561/pexels-photo-13787561.jpeg","brand":"some Brand"},{"title":"Siddha Pain Relief Balm","price":"198.56","currency":"$","options":"25g, 50g","img":"https://images.pexels.com/photos/13779105/pexels-photo-13779105.jpeg","brand":"some Brand"},{"title":"Ayurveda Skin Glow Cream","price":"425.85","currency":"$","options":"50g, 100g","img":"https://images.pexels.com/photos/13779110/pexels-photo-13779110.jpeg","brand":"some Brand"},{"title":"Siddha Digestive Powder","price":"196.99","offer_price":"98.66","currency":"$","options":"100g, 250g","img":"https://images.pexels.com/photos/14027296/pexels-photo-14027296.jpeg","brand":"some Brand"},{"title":"Ayurveda Relaxation Tea","price":"329.99","offer_price":"198.66","new":true,"currency":"$","options":"50g, 100g","img":"https://images.pexels.com/photos/13779106/pexels-photo-13779106.jpeg","brand":"some Brand"},{"title":"Siddha Energy Tonic","price":"444.99","currency":"$","options":"200ml, 500ml","img":"https://images.pexels.com/photos/14163204/pexels-photo-14163204.jpeg","brand":"some Brand"},{"title":"Ayurveda Joint Care Capsules","price":"178.99","new":true,"currency":"$","options":"30 capsules, 60 capsules","img":"https://images.pexels.com/photos/13779111/pexels-photo-13779111.jpeg","brand":"some Brand"},{"title":"Siddha Hair Growth Oil","price":"154.99","new":true,"currency":"$","options":"100ml, 250ml","img":"https://images.pexels.com/photos/6442509/pexels-photo-6442509.jpeg","brand":"some Brand"},{"title":"Ayurveda Stress Relief Oil","price":"299.99","offer_price":"199.99","currency":"$","options":"100ml, 200ml","img":"https://images.pexels.com/photos/13779107/pexels-photo-13779107.jpeg","brand":"some Brand"}];
+        // const products= [{"title":"Siddha Herbal Oil","price":"329.99","offer_price":"198.66","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg","brand":"some Brand"},{"title":"Ayurveda Immunity Booster","price":"275.45","new":true,"currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13787561/pexels-photo-13787561.jpeg","brand":"some Brand"},{"title":"Siddha Pain Relief Balm","price":"198.56","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779105/pexels-photo-13779105.jpeg","brand":"some Brand"},{"title":"Ayurveda Skin Glow Cream","price":"425.85","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779110/pexels-photo-13779110.jpeg","brand":"some Brand"},{"title":"Siddha Digestive Powder","price":"196.99","offer_price":"98.66","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/14027296/pexels-photo-14027296.jpeg","brand":"some Brand"},{"title":"Ayurveda Relaxation Tea","price":"329.99","offer_price":"198.66","new":true,"currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779106/pexels-photo-13779106.jpeg","brand":"some Brand"},{"title":"Siddha Energy Tonic","price":"444.99","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/14163204/pexels-photo-14163204.jpeg","brand":"some Brand"},{"title":"Ayurveda Joint Care Capsules","price":"178.99","new":true,"currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779111/pexels-photo-13779111.jpeg","brand":"some Brand"},{"title":"Siddha Hair Growth Oil","price":"154.99","new":true,"currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/6442509/pexels-photo-6442509.jpeg","brand":"some Brand"},{"title":"Ayurveda Stress Relief Oil","price":"299.99","offer_price":"199.99","currency":"$","options":["100ml","200ml","500ml"],"img":"https://images.pexels.com/photos/13779107/pexels-photo-13779107.jpeg","brand":"some Brand"}];
         // console.log(products);
+
+    function renderProducts(products,fresh=false) {
 
         const container = document.querySelector("#products");
 
-        function renderProducts(products) {
-          if (!container) return;
+        if (!container){ 
+            console.error("Container not found!");
+            return;
+        }
 
-          let productsHTML = '';
+        let productsHTML = '';
 
           products.forEach(product => {
               // Generate Badges
@@ -1070,13 +1071,19 @@
               `;
               productsHTML += productHTML;
           });
-
+          if (fresh){
+            container.innerHTML='';
+          }
           container.innerHTML += productsHTML;
-      }
+        }
 
-        function load(n=15){
-            if (products.length!==0){
-            renderProducts(products.splice(0,n));
+        let load_start=0; 
+        let load_end=0;
+        function load(n=10){
+            if (products.length>load_start){
+                load_end+=n;
+                renderProducts(products.slice(load_start,load_end),load_start===0 ? true : false);
+                load_start+=n;
             } else {
                 const loadMoreButton = document.querySelector('#lm-btn');
                 loadMoreButton.className = 'btn btn-danger disabled mt-5 align-self-center py-3 px-4 border-0';
@@ -1094,21 +1101,55 @@
 
 
         let products=[];
+        // let og_products=[];
+
+        function getProds(){
+            fetch("data/products.json")
+            .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); // Parse the response as JSON
+            })
+            .then((rawProducts) => {
+                products=rawProducts;
+                // og_products=rawProducts;
+                load(5);
+            // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
+            })
+        }
 
 
-        fetch("data/products.json")
-        .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
+        let og_products;
+        function sortIt(by,a=true){
+            console.log(by,a,typeof a);
+            // note:
+                // make price is a constent value for all obj coz thoses with offer proce sucks in soring
+            try {
+                og_products = structuredClone(products);
+            } catch (error) {
+                og_products = JSON.parse(JSON.stringify(products)); // Fallback for older browsers
             }
-            return response.json(); // Parse the response as JSON
-        })
-        .then((rawProducts) => {
-            products=rawProducts;
-            container.innerHTML=``;
-            load(5);
-        // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
-        })
+
+            if (by !== "title"){
+                console.log("not title")
+                products.sort((x, y) => (a==="true" ? x[by] - y[by] : y[by] - x[by]));
+            } else{
+                console.log("title")
+                products.sort((x, y) => x[by].localeCompare(y[by]));
+            }
+
+            renderProducts(products.slice(0,load_start),true);
+            console.log(products.slice(0));
+        }
+
+        getProds();
+
+        console.log("from index.hhtml");
+        // Ensure selection resets to "Sort By" after page reload
+        window.onload = function() {
+            document.getElementById("sortSelect").selectedIndex = 0; // Reset dropdown to "Sort By"
+        };
     </script>
 
 

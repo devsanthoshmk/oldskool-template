@@ -37,14 +37,45 @@
 - [ ] Implement database in /checkout /checkout-shopping wishlist login oauth... everywhere
 - [ ] Implement cloudflare workers instead of loc functions
 - [ ] Implement supabase instead of MySql
-- [ ] Deploy whole thing to pages
-
+- [ ] Deploy whole thing to pages 
 
 ## Tweaks:
 
 - [ ] https://uiverse.io/Nawsome/spicy-wolverine-85 with out loader__ball for loading if needed
 - [ ] Remove footer header wherevery not needed
 - [ ] Innovative Front-end design ideas like using local storage to pickup where user were
+
+## E-Commerce Website
+
+**THIS IS DEV BRANCH FEATURES IN PROCESS COMES HERE**
+
+### Installation
+
+  - First go to eleventy folder
+  ```bash
+    cd eleventy
+  ```
+
+  - Install requirements by
+  ```bash
+    npm install
+  ```
+
+### Contribution
+
+  - open vs code
+  ```bash
+    code .
+  ```
+
+  - run dev server(in any terminal under eleventy folder)
+  ```bash
+    npm run serve
+  ```
+
+  - Go to templates folder you can find html files....
+
+### **Changes will reflect on the go in the browser while the dev server is active no need to restart**
 
 
 # Those function(sort,filter....) format(Deprecated):
@@ -67,35 +98,3 @@ function sort_by_price(reverse=false){
 
 }
 ```
-
-# E-Commerce Website
-
-**THIS IS DEV BRANCH FEATURES IN PROCESS COMES HERE**
-
-## Installation
-
-  - First go to eleventy folder
-  ```bash
-    cd eleventy
-  ```
-
-  - Install requirements by
-  ```bash
-    npm install
-  ```
-
-## Contribution
-
-  - open vs code
-  ```bash
-    code .
-  ```
-
-  - run dev server(in any terminal under eleventy folder)
-  ```bash
-    npm run serve
-  ```
-
-  - Go to templates folder you can find html files....
-
-### **Changes will reflect on the go in the browser while the dev server is active no need to restart**

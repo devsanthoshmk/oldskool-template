@@ -40,14 +40,40 @@ function renderComponent(matchedRoute, params) {
     return response.text(); // Parse the response as JSON
   })
   .then((html) => {
-    console.log(html.slice(9000,18180));
+    console.log(html.slice(9000,18181));
     console.log(html.slice(-2517,-1000));
-    let content= html.slice(18180,-2517);
+    let content= html.slice(18181,-2517);
     appContainer.innerHTML = content;     // Append the element to the container
     // appContainer.innerHTML = html;     // Append the element to the container
     window.removeEventListener('DOMContentLoaded', safeRouter);
     document.dispatchEvent(new Event("DOMContentLoaded"));
     window.addEventListener('DOMContentLoaded',safeRouter);
+
+    // Adding route spicific js logic to overcome script tag not running in innerHtml addition
+    if (matchedRoute===routes[0]){
+      load_start=0;
+      load_end=0;
+      setTimeout(() => {
+          getProds();
+      }, 500);
+
+    }
+
+    //rendering scripts which comes with #content in csr
+    // document.querySelectorAll("#content script").forEach((oldScript) => {
+    //   const newScript = document.createElement("script");
+
+    //   if (oldScript.src) {
+    //       newScript.src = oldScript.src;
+    //       newScript.async = oldScript.async;
+    //   } else {
+    //       newScript.text = oldScript.text;
+    //   }
+    //   document.body.appendChild(newScript);
+    //   oldScript.remove();
+
+    // });
+
 
 
   })

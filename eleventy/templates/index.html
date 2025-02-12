@@ -279,11 +279,11 @@
             </button>
             <!-- / Filter Trigger-->
             <!-- Sort Options-->
-            <select class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
+            <select id="sortSelect" onchange="sortIt(this.value,this.selectedOptions[0].dataset.a)" class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
                 <option selected="">Sort By</option>
-                <option value="1">Hi Low</option>
-                <option value="2">Low Hi</option>
-                <option value="3">Name</option>
+                <option value="price" data-a="false">Hi → Low</option>
+                <option value="price" data-a="true">Low → Hi</option>
+                <option value="title" data-a="true">Name</option>
             </select>
             <!-- / Sort Options-->
         </div>
@@ -550,53 +550,6 @@
         </div>
       </div>
     </div>
-
-{#
- <script>
-    // Select all images with class 'pexels'
-    const images = document.querySelectorAll('.pexels');
-
-    // Function to fetch random image for each image tag
-    function fetchRandomImage(imageElement) {
-        // Randomize query slightly or use different terms to get diverse results
-        const query = 'siddha aurvadha medicine product';  // Same query for all, but randomizing images by page number
-
-        // Use a random page number for each request to get different images
-        const page = Math.floor(Math.random() * 100) + 1; // Random page between 1 and 100
-
-        fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${page}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': 'BEZHK7iMmhfnXgrL50JIQOdjLqJJBTPUMw3ugHNeDX6H7NpsOpBzNWie' 
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.photos.length > 0) {
-                    // Get the URL of the first image and set its size
-                    const imgUrl = data.photos[0].src.medium; // Use 'medium' size to ensure uniformity
-
-                    // Set the src attribute of the image tag
-                    imageElement.src = imgUrl;
-
-                    // After the image is loaded, set the width and height
-                    imageElement.onload = function () {
-                        imageElement.style.width = '300px';  // Set the desired width
-                        imageElement.style.height = '200px'; // Set the desired height
-                        imageElement.style.objectFit = 'cover';  // Ensure images cover the space without distortion
-                    }
-                } else {
-                    console.error('No images found for this query on page ' + page);
-                }
-            })
-            .catch(error => console.error('Error fetching image:', error));
-    }
-
-    // Loop through all images with the class 'pexels' and fetch a random image for each
-    images.forEach(image => fetchRandomImage(image));
-</script>
-#}
-
     
 
     <!-- /canvas -->
@@ -607,12 +560,16 @@
         // const products= {{ products | dump | safe }};
         // console.log(products);
 
+    function renderProducts(products,fresh=false) {
+
         const container = document.querySelector("#products");
 
-        function renderProducts(products) {
-          if (!container) return;
+        if (!container){ 
+            console.error("Container not found!");
+            return;
+        }
 
-          let productsHTML = '';
+        let productsHTML = '';
 
           products.forEach(product => {
               // Generate Badges
@@ -686,13 +643,19 @@
               `;
               productsHTML += productHTML;
           });
-
+          if (fresh){
+            container.innerHTML='';
+          }
           container.innerHTML += productsHTML;
-      }
+        }
 
-        function load(n=15){
-            if (products.length!==0){
-            renderProducts(products.splice(0,n));
+        let load_start=0; 
+        let load_end=0;
+        function load(n=10){
+            if (products.length>load_start){
+                load_end+=n;
+                renderProducts(products.slice(load_start,load_end),load_start===0 ? true : false);
+                load_start+=n;
             } else {
                 const loadMoreButton = document.querySelector('#lm-btn');
                 loadMoreButton.className = 'btn btn-danger disabled mt-5 align-self-center py-3 px-4 border-0';
@@ -710,21 +673,55 @@
 
 
         let products=[];
+        // let og_products=[];
+
+        function getProds(){
+            fetch("data/products.json")
+            .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); // Parse the response as JSON
+            })
+            .then((rawProducts) => {
+                products=rawProducts;
+                // og_products=rawProducts;
+                load(5);
+            // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
+            })
+        }
 
 
-        fetch("data/products.json")
-        .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
+        let og_products;
+        function sortIt(by,a=true){
+            console.log(by,a,typeof a);
+            // note:
+                // make price is a constent value for all obj coz thoses with offer proce sucks in soring
+            try {
+                og_products = structuredClone(products);
+            } catch (error) {
+                og_products = JSON.parse(JSON.stringify(products)); // Fallback for older browsers
             }
-            return response.json(); // Parse the response as JSON
-        })
-        .then((rawProducts) => {
-            products=rawProducts;
-            container.innerHTML=``;
-            load(5);
-        // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
-        })
+
+            if (by !== "title"){
+                console.log("not title")
+                products.sort((x, y) => (a==="true" ? x[by] - y[by] : y[by] - x[by]));
+            } else{
+                console.log("title")
+                products.sort((x, y) => x[by].localeCompare(y[by]));
+            }
+
+            renderProducts(products.slice(0,load_start),true);
+            console.log(products.slice(0));
+        }
+
+        getProds();
+
+        console.log("from index.hhtml");
+        // Ensure selection resets to "Sort By" after page reload
+        window.onload = function() {
+            document.getElementById("sortSelect").selectedIndex = 0; // Reset dropdown to "Sort By"
+        };
     </script>
 
 
