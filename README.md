@@ -22,7 +22,7 @@
 - [ ] Add sort, filter, search built-in functions to respective buttons
 - [ ] SSG products to html files
 - [ ] Use product.json similar for You May Also Like
-- [ ] Create htmls for upper base.html(the trimming part upper in CSR) and same for lower part to get indexes
+- [x] Create htmls for upper base.html(the trimming part upper in CSR) and same for lower part to get indexes
 - [ ] Add non-persistant cart first
 - [ ] Add non-persistant wishlist first
 - [ ] Get current location in checkout page
