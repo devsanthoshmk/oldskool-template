@@ -274,9 +274,17 @@
         </div>
         <div class="d-flex justify-content-end align-items-center mt-4 mt-lg-0 flex-column flex-md-row">
             <!-- Filter Trigger-->
-            <button class="btn bg-light p-3 me-md-3 d-flex align-items-center fs-7 lh-1 w-100 mb-2 mb-md-0 w-md-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
-                <i class="ri-equalizer-line me-2"></i> Filters
-            </button>
+            <button class="btn bg-light p-3 me-md-3 d-flex align-items-center fs-7 lh-1 w-100 mb-2 mb-md-0 w-md-auto position-relative" 
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasFilters" 
+        aria-controls="offcanvasFilters">
+  <i class="ri-equalizer-line me-2"></i> Filters
+  <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle" 
+        style="width: 10px; height: 10px;">
+  </span>
+</button>
+
             <!-- / Filter Trigger-->
             <!-- Sort Options-->
             <select id="sortSelect" onchange="sortIt(this.value,this.selectedOptions[0].dataset.a)" class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
@@ -358,7 +366,7 @@
           <div>
     
             <!-- Price Filter -->
-            <div class="py-4 widget-filter widget-filter-price border-top">
+             <div class="py-4 widget-filter widget-filter-price border-top">
               <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
                 data-bs-toggle="collapse" href="#filter-modal-price" role="button" aria-expanded="true"
                 aria-controls="filter-modal-price">
@@ -378,74 +386,51 @@
                 </div>          </div>
             </div>
             <!-- / Price Filter -->
+            <!-- / Price Filter -->
     
             <!-- Brands Filter -->
             <div class="py-4 widget-filter border-top">
-              <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
-                data-bs-toggle="collapse" href="#filter-modal-brands" role="button" aria-expanded="true"
-                aria-controls="filter-modal-brands">
+              <a class="small text-body text-decoration-none text-secondary-hover transition-all fs-6 fw-bolder d-block collapse-icon-chevron collapsed" data-bs-toggle="collapse" href="#filter-modal-brands" role="button" aria-expanded="false" aria-controls="filter-modal-brands">
                 Brands
               </a>
-              <div id="filter-modal-brands" class="collapse show">
+              <div id="filter-modal-brands" class="collapse" style="">
                 <div class="input-group my-3 py-1">
-                  <input type="text" class="form-control py-2 filter-search rounded" placeholder="Search"
-                    aria-label="Search">
-                  <span class="input-group-text bg-transparent p-2 position-absolute top-10 end-0 border-0 z-index-20"><i
-                      class="ri-search-2-line text-muted"></i></span>
+                  <input type="text" class="form-control py-2 filter-search rounded" placeholder="Search" aria-label="Search">
+                  <span class="input-group-text bg-transparent p-2 position-absolute top-10 end-0 border-0 z-index-20"><i class="ri-search-2-line text-muted"></i></span>
                 </div>
                 <div class="simplebar-wrapper">
-                  <div class="filter-options" data-pixr-simplebar>
+                  <div class="filter-options" data-pixr-simplebar="" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
                     <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-0">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-0">Adidas  <span
-                                class="text-muted ms-1 fs-9">(21)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-0">Adidas  <span class="text-muted ms-1 fs-9">(21)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-1">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-1">Asics  <span
-                                class="text-muted ms-1 fs-9">(13)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-1">Asics  <span class="text-muted ms-1 fs-9">(13)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-2">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-2">Canterbury  <span
-                                class="text-muted ms-1 fs-9">(18)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-2">Canterbury  <span class="text-muted ms-1 fs-9">(18)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-3">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-3">Converse  <span
-                                class="text-muted ms-1 fs-9">(25)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-3">Converse  <span class="text-muted ms-1 fs-9">(25)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-4">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-4">Donnay  <span
-                                class="text-muted ms-1 fs-9">(11)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-4">Donnay  <span class="text-muted ms-1 fs-9">(11)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-5">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-5">Nike  <span
-                                class="text-muted ms-1 fs-9">(19)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-5">Nike  <span class="text-muted ms-1 fs-9">(19)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-6">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-6">Millet  <span
-                                class="text-muted ms-1 fs-9">(24)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-6">Millet  <span class="text-muted ms-1 fs-9">(24)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-7">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-7">Puma  <span
-                                class="text-muted ms-1 fs-9">(11)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-7">Puma  <span class="text-muted ms-1 fs-9">(11)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-8">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-8">Reebok  <span
-                                class="text-muted ms-1 fs-9">(19)</span></label>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-8">Reebok  <span class="text-muted ms-1 fs-9">(19)</span></label>
                     </div>                <div class="form-group form-check-custom mb-1">
                         <input type="checkbox" class="form-check-input" id="filter-brands-modal-9">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center"
-                            for="filter-brands-modal-9">Under Armour  <span
-                                class="text-muted ms-1 fs-9">(24)</span></label>
-                    </div>              </div>
+                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-9">Under Armour  <span class="text-muted ms-1 fs-9">(24)</span></label>
+                    </div>              </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
                 </div>
               </div>
             </div>
@@ -544,7 +529,7 @@
     
           <!-- Filter Button-->
           <div class="border-top pt-3">
-            <a href="#" class="btn btn-dark mt-2 d-block hover-lift-sm hover-boxshadow" data-bs-dismiss="offcanvas" aria-label="Close">Done</a>
+            <a class="btn btn-dark mt-2 d-block hover-lift-sm hover-boxshadow" data-bs-dismiss="offcanvas" aria-label="Close">Done</a>
           </div>
           <!-- /Filter Button-->
         </div>
@@ -722,6 +707,78 @@
         window.onload = function() {
             document.getElementById("sortSelect").selectedIndex = 0; // Reset dropdown to "Sort By"
         };
+    </script>
+
+    <script type="text/javascript">
+        const minInput = document.querySelector('.filter-min');
+        const maxInput = document.querySelector('.filter-max');
+
+        // Store original function
+        // const originalMinHandler = minInput.oninput;
+        // const originalMaxHandler = maxInput.oninput;
+
+        // Override input event function
+        // minInput.oninput = function(event) {
+        //     console.log("Min value changed:", event.target.value);
+        //     console.log("tesig func call here",event.target.value);
+        // };
+
+        // maxInput.oninput = function(event) {
+        //     console.log("Max value changed:", event.target.value);
+        //     console.log("tesig func call here",event.target.value);
+        // };
+
+        const offcanvasElement = document.getElementById('offcanvasFilters');
+
+        offcanvasElement.addEventListener('hidden.bs.offcanvas', () => {
+          // Call your function here
+          filter();
+        });
+
+        const defultPrice=[ "60.00", "900.00" ]
+        function filter() {
+    const slider = document.querySelector('.noUi-target').noUiSlider;
+
+    // Get the current values of the slider
+    const price = slider.get();
+    console.log(price);
+
+    if (defultPrice !== price) {
+        console.log("filter wid price", price);
+    } else {
+        console.log("no change in price");
+    }
+
+    const selectedCheckboxes = document.querySelectorAll('#filter-modal-brands input[type="checkbox"]:checked');
+
+    // Correctly closing the arrow function and map method.
+    const selectedBrands = Array.from(selectedCheckboxes).map(checkbox => {
+        const label = document.querySelector(`label[for="${checkbox.id}"]`);
+        // Optionally, return a value if needed. For example:
+        return label.textContent.replace(/\(\d+\)/, '').trim(); // or return label, depending on your requirements.
+    });
+
+    console.log(selectedBrands);
+
+
+    const selectedSizeCheckboxes = document.querySelectorAll(
+    '#filter-modal-sizes input[type="checkbox"]:checked'
+  );
+
+  // Map each checked checkbox to its label text
+  const selectedSizes = Array.from(selectedSizeCheckboxes).map(checkbox => {
+    const label = document.querySelector(`label[for="${checkbox.id}"]`);
+    console.log(label); // Logs the label element for debugging
+    return label ? label.textContent.trim() : null; // Return trimmed text or null if not found
+  });
+
+  console.log("Selected sizes:", selectedSizes);
+}
+
+              
+
+        
+
     </script>
 
 
