@@ -21,6 +21,8 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('static/assets/images/products');
 
     // JS files
+    eleventyConfig.addWatchTarget('static/assets/js/index.js');
+    eleventyConfig.addPassthroughCopy('static/assets/js/index.js');
     eleventyConfig.addWatchTarget('static/assets/js/route.js');
     eleventyConfig.addPassthroughCopy('static/assets/js/route.js');
     eleventyConfig.addPassthroughCopy('static/assets/js/theme.bundle.js');

@@ -16,7 +16,68 @@
 {% extends "base.html" %}
 {%block main%}
 <div id="content">
+    <style>
+        .skeleton {
+            background-color: #e9ecef;
+            overflow: hidden;
+            position: relative;
+        }
 
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.9) 50%,  /* Increased opacity */
+                rgba(255,255,255,0) 100%);
+            animation: skeletonShimmer 1.2s infinite;
+        }
+
+        .skeleton-image-container {
+            position: relative;
+            padding-top: 80%; /* Common product image aspect ratio */
+        }
+
+        .skeleton-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .skeleton-line {
+            height: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .skeleton-line.short {
+            width: 60%;
+        }
+
+        .skeleton-line.price {
+            width: 40%;
+            height: 1.25rem;
+        }
+
+        .skeleton-badge {
+            width: 70px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            border-radius: 20px;
+        }
+
+        @keyframes skeletonShimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
     <section class="mt-0 overflow-hidden ">
         <!-- Page Content Goes Here -->
         <!-- Top banner -->
@@ -280,7 +341,7 @@
         data-bs-target="#offcanvasFilters" 
         aria-controls="offcanvasFilters">
   <i class="ri-equalizer-line me-2"></i> Filters
-  <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle" 
+  <span id="filter-changed" class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle d-none" 
         style="width: 10px; height: 10px;">
   </span>
 </button>
@@ -288,7 +349,7 @@
             <!-- / Filter Trigger-->
             <!-- Sort Options-->
             <select id="sortSelect" onchange="sortIt(this.value,this.selectedOptions[0].dataset.a)" class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
-                <option selected="">Sort By</option>
+                <option value="getOG" data-a="true" selected="">Sort By</option>
                 <option value="price" data-a="false">Hi → Low</option>
                 <option value="price" data-a="true">Low → Hi</option>
                 <option value="title" data-a="true">Name</option>
@@ -306,13 +367,7 @@
 <div class="col-12 col-sm-6 col-lg-3">
     <!-- Card Product Skeleton -->
     <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
-        <div class="card-img position-relative">
-            {# <!-- Skeleton Badges -->
-            <div class="card-badges">
-                <span class="badge skeleton-badge skeleton"></span>
-                <span class="badge skeleton-badge skeleton"></span>
-            </div> #}
-            
+        <div class="card-img position-relative">            
             <!-- Skeleton Image -->
             <div class="position-relative overflow-hidden d-block bg-light skeleton-image-container">
                 <div class="skeleton-image skeleton"></div>
@@ -400,37 +455,8 @@
                 </div>
                 <div class="simplebar-wrapper">
                   <div class="filter-options" data-pixr-simplebar="" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                    <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-0">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-0">Adidas  <span class="text-muted ms-1 fs-9">(21)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-1">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-1">Asics  <span class="text-muted ms-1 fs-9">(13)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-2">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-2">Canterbury  <span class="text-muted ms-1 fs-9">(18)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-3">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-3">Converse  <span class="text-muted ms-1 fs-9">(25)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-4">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-4">Donnay  <span class="text-muted ms-1 fs-9">(11)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-5">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-5">Nike  <span class="text-muted ms-1 fs-9">(19)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-6">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-6">Millet  <span class="text-muted ms-1 fs-9">(24)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-7">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-7">Puma  <span class="text-muted ms-1 fs-9">(11)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-8">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-8">Reebok  <span class="text-muted ms-1 fs-9">(19)</span></label>
-                    </div>                <div class="form-group form-check-custom mb-1">
-                        <input type="checkbox" class="form-check-input" id="filter-brands-modal-9">
-                        <label class="form-check-label fw-normal text-body flex-grow-1 d-flex align-items-center" for="filter-brands-modal-9">Under Armour  <span class="text-muted ms-1 fs-9">(24)</span></label>
-                    </div>              </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+                    <!-- dynamic products here -->
+                 </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar simplebar-visible" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
                 </div>
               </div>
             </div>
@@ -484,7 +510,7 @@
             <!-- / Sizes Filter -->
     
             <!-- Colour Filter -->
-          {#   {% comment %} <div class="py-4 widget-filter border-top">
+            {% comment %} <div class="py-4 widget-filter border-top">
               <a class="small text-body text-decoration-none text-secondary-hover transition-all transition-all fs-6 fw-bolder d-block collapse-icon-chevron"
                 data-bs-toggle="collapse" href="#filter-modal-colour" role="button" aria-expanded="true"
                 aria-controls="filter-modal-colour">
@@ -522,7 +548,7 @@
                   </div>            
                 </div>
               </div>
-            </div> {% endcomment %} #}
+            </div> {% endcomment %}
             <!-- / Colour Filter -->
           </div>
           <!-- / Filters-->
@@ -539,309 +565,15 @@
 
     <!-- /canvas -->
 </div>
-
+    <script src="/static/assets/js/index.js"></script>
     <script type="text/javascript">
-
-        // const products= {{ products | dump | safe }};
-        // console.log(products);
-
-    function renderProducts(products,fresh=false) {
-
-        const container = document.querySelector("#products");
-
-        if (!container){ 
-            console.error("Container not found!");
-            return;
-        }
-
-        let productsHTML = '';
-
-          products.forEach(product => {
-              // Generate Badges
-              let badgesHTML = '';
-              if (product.sale_price) {
-                  badgesHTML += `
-                      <span class="badge badge-card">
-                          <span class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale
-                      </span>
-                  `;
-              }
-              if (product.new) {
-                  badgesHTML += `
-                      <span class="badge badge-card">
-                          <span class="f-w-2 f-h-2 bg-success rounded-circle d-block me-1"></span> High Demand
-                      </span>
-                  `;
-              }
-              if (product.sold_out) {
-                  badgesHTML += `
-                      <span class="badge badge-card">
-                          <span class="f-w-2 f-h-2 bg-secondary rounded-circle d-block me-1"></span> Sold Out
-                      </span>
-                  `;
-              }
-
-              // Quick Add Button
-              const quickAddHTML = !product.sold_out ? `
-                  <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
-                      <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
-                  </div>
-              ` : '';
-
-              // Price Display Logic
-              let priceHTML;
-              if (product.sold_out) {
-                  priceHTML = `<p class="mt-2 mb-0 small text-muted">Sold Out</p>`;
-              } else {
-                  priceHTML = product.offer_price 
-                      ? `<p class="mt-2 mb-0 small"><s class="text-muted">${product.currency} ${product.price}</s> <span class="text-danger">${product.currency}${product.offer_price}</span></p>`
-                      : `<p class="mt-2 mb-0 small">${product.currency}${product.price}</p>`;
-              }
-
-              // Build Product Card
-              const productHTML = `
-                  <div class="col-12 col-sm-6 col-lg-3">
-                      <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
-                          <div class="card-img position-relative">
-                              <div class="card-badges">
-                                  ${badgesHTML}
-                              </div>
-                              <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted">
-                                  <i class="ri-heart-line"></i>
-                              </span>
-                              <picture class="position-relative overflow-hidden d-block bg-light">
-                                  <img class="w-100 img-fluid position-relative z-index-10 pexels" 
-                                       src="${product.img}" 
-                                       alt="${product.title}" 
-                                       title="${product.title}">
-                              </picture>
-                              ${quickAddHTML}
-                          </div>
-                          <div class="card-body px-0">
-                              <a class="text-decoration-none link-cover" href="/product">${product.title}</a>
-                              <span class="text-secondary">| By ${product.brand}</span>
-                              <small class="text-muted d-block">${product.options}</small>
-                              ${priceHTML}
-                          </div>
-                      </div>
-                  </div>
-              `;
-              productsHTML += productHTML;
-          });
-          if (fresh){
-            container.innerHTML='';
-          }
-          container.innerHTML += productsHTML;
-        }
-
-        let load_start=0; 
-        let load_end=0;
-        function load(n=10){
-            if (products.length>load_start){
-                load_end+=n;
-                renderProducts(products.slice(load_start,load_end),load_start===0 ? true : false);
-                load_start+=n;
-            } else {
-                const loadMoreButton = document.querySelector('#lm-btn');
-                loadMoreButton.className = 'btn btn-danger disabled mt-5 align-self-center py-3 px-4 border-0';
-
-                loadMoreButton.textContent = 'No more products to load';
-                loadMoreButton.style.pointerEvents = 'none';
-
-                setTimeout(() => {
-                    loadMoreButton.remove(); // Removes the button element from the DOM
-                    console.log('Button removed after 5 seconds');
-                }, 5000);
-
-            }
-        }
-
-
-        let products=[];
-        // let og_products=[];
-
-        function getProds(){
-            fetch("data/products.json")
-            .then((response) => {
-                if (!response.ok) {
-                  throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json(); // Parse the response as JSON
-            })
-            .then((rawProducts) => {
-                products=rawProducts;
-                // og_products=rawProducts;
-                load(5);
-            // setTimeout(()=>{renderProducts(products);console.log(1)},5000);
-            })
-        }
-
-
-        let og_products;
-        function sortIt(by,a=true){
-            console.log(by,a,typeof a);
-            // note:
-                // make price is a constent value for all obj coz thoses with offer proce sucks in soring
-            try {
-                og_products = structuredClone(products);
-            } catch (error) {
-                og_products = JSON.parse(JSON.stringify(products)); // Fallback for older browsers
-            }
-
-            if (by !== "title"){
-                console.log("not title")
-                products.sort((x, y) => (a==="true" ? x[by] - y[by] : y[by] - x[by]));
-            } else{
-                console.log("title")
-                products.sort((x, y) => x[by].localeCompare(y[by]));
-            }
-
-            renderProducts(products.slice(0,load_start),true);
-            console.log(products.slice(0));
-        }
-
+        // to fetch products.json also getProds() handls after pods calls
         getProds();
-
-        console.log("from index.hhtml");
-        // Ensure selection resets to "Sort By" after page reload
-        window.onload = function() {
-            document.getElementById("sortSelect").selectedIndex = 0; // Reset dropdown to "Sort By"
-        };
     </script>
-
     <script type="text/javascript">
-        const minInput = document.querySelector('.filter-min');
-        const maxInput = document.querySelector('.filter-max');
-
-        // Store original function
-        // const originalMinHandler = minInput.oninput;
-        // const originalMaxHandler = maxInput.oninput;
-
-        // Override input event function
-        // minInput.oninput = function(event) {
-        //     console.log("Min value changed:", event.target.value);
-        //     console.log("tesig func call here",event.target.value);
-        // };
-
-        // maxInput.oninput = function(event) {
-        //     console.log("Max value changed:", event.target.value);
-        //     console.log("tesig func call here",event.target.value);
-        // };
-
-        const offcanvasElement = document.getElementById('offcanvasFilters');
-
-        offcanvasElement.addEventListener('hidden.bs.offcanvas', () => {
-          // Call your function here
-          filter();
-        });
-
-        const defultPrice=[ "60.00", "900.00" ]
-        function filter() {
-    const slider = document.querySelector('.noUi-target').noUiSlider;
-
-    // Get the current values of the slider
-    const price = slider.get();
-    console.log(price);
-
-    if (defultPrice !== price) {
-        console.log("filter wid price", price);
-    } else {
-        console.log("no change in price");
-    }
-
-    const selectedCheckboxes = document.querySelectorAll('#filter-modal-brands input[type="checkbox"]:checked');
-
-    // Correctly closing the arrow function and map method.
-    const selectedBrands = Array.from(selectedCheckboxes).map(checkbox => {
-        const label = document.querySelector(`label[for="${checkbox.id}"]`);
-        // Optionally, return a value if needed. For example:
-        return label.textContent.replace(/\(\d+\)/, '').trim(); // or return label, depending on your requirements.
-    });
-
-    console.log(selectedBrands);
-
-
-    const selectedSizeCheckboxes = document.querySelectorAll(
-    '#filter-modal-sizes input[type="checkbox"]:checked'
-  );
-
-  // Map each checked checkbox to its label text
-  const selectedSizes = Array.from(selectedSizeCheckboxes).map(checkbox => {
-    const label = document.querySelector(`label[for="${checkbox.id}"]`);
-    console.log(label); // Logs the label element for debugging
-    return label ? label.textContent.trim() : null; // Return trimmed text or null if not found
-  });
-
-  console.log("Selected sizes:", selectedSizes);
-}
-
-              
-
         
 
+
     </script>
 
-
-<style>
-    .skeleton {
-        background-color: #e9ecef;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .skeleton::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(90deg, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,0.9) 50%,  /* Increased opacity */
-            rgba(255,255,255,0) 100%);
-        animation: skeletonShimmer 1.2s infinite;
-    }
-
-    .skeleton-image-container {
-        position: relative;
-        padding-top: 80%; /* Common product image aspect ratio */
-    }
-
-    .skeleton-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .skeleton-line {
-        height: 1rem;
-        margin-bottom: 0.5rem;
-        border-radius: 0.25rem;
-    }
-
-    .skeleton-line.short {
-        width: 60%;
-    }
-
-    .skeleton-line.price {
-        width: 40%;
-        height: 1.25rem;
-    }
-
-    .skeleton-badge {
-        width: 70px;
-        height: 24px;
-        display: inline-block;
-        margin-right: 0.5rem;
-        border-radius: 20px;
-    }
-
-    @keyframes skeletonShimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-</style>
 {% endblock main %}

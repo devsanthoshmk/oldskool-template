@@ -4,9 +4,10 @@
         "price": "329.99",
         "offer_price": "198.66",
         "currency": "$",
-        "options": ["100ml", "200ml", "500ml"],
+        "options": ["100ml", "200ml", "500ml","150ml","300ml"],
         "img": "https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg",
-        "brand": "some Brand"
+        "brand": "HerbPure",
+        "brand_id": "HP001"
     },
     {
         "title": "Ayurveda Immunity Booster",
@@ -15,7 +16,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13787561/pexels-photo-13787561.jpeg",
-        "brand": "some Brand"
+        "brand": "AyurLife",
+        "brand_id": "AL002"
     },
     {
         "title": "Siddha Pain Relief Balm",
@@ -23,7 +25,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13779105/pexels-photo-13779105.jpeg",
-        "brand": "some Brand"
+        "brand": "SiddhaCure",
+        "brand_id": "SC003"
     },
     {
         "title": "Ayurveda Skin Glow Cream",
@@ -31,7 +34,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13779110/pexels-photo-13779110.jpeg",
-        "brand": "some Brand"
+        "brand": "GlowAyur",
+        "brand_id": "GA004"
     },
     {
         "title": "Siddha Digestive Powder",
@@ -40,7 +44,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/14027296/pexels-photo-14027296.jpeg",
-        "brand": "some Brand"
+        "brand": "SiddhaHerbs",
+        "brand_id": "SH005"
     },
     {
         "title": "Ayurveda Relaxation Tea",
@@ -50,7 +55,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13779106/pexels-photo-13779106.jpeg",
-        "brand": "some Brand"
+        "brand": "AyurTea",
+        "brand_id": "AT006"
     },
     {
         "title": "Siddha Energy Tonic",
@@ -58,7 +64,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/14163204/pexels-photo-14163204.jpeg",
-        "brand": "some Brand"
+        "brand": "SiddhaBoost",
+        "brand_id": "SB007"
     },
     {
         "title": "Ayurveda Joint Care Capsules",
@@ -67,7 +74,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13779111/pexels-photo-13779111.jpeg",
-        "brand": "some Brand"
+        "brand": "JointAyur",
+        "brand_id": "JA008"
     },
     {
         "title": "Siddha Hair Growth Oil",
@@ -76,7 +84,8 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/6442509/pexels-photo-6442509.jpeg",
-        "brand": "some Brand"
+        "brand": "SiddhaHair",
+        "brand_id": "SH009"
     },
     {
         "title": "Ayurveda Stress Relief Oil",
@@ -85,6 +94,7 @@
         "currency": "$",
         "options": ["100ml", "200ml", "500ml"],
         "img": "https://images.pexels.com/photos/13779107/pexels-photo-13779107.jpeg",
-        "brand": "some Brand"
+        "brand": "CalmAyur",
+        "brand_id": "CA010"
     }
 ]

@@ -9,7 +9,6 @@ const routes = [
       '/login',
       '/register',
     ];
-const parser = new DOMParser();
 
 function extractParams(route, path) {
   const routeParts = route.split('/');
@@ -40,9 +39,9 @@ function renderComponent(matchedRoute, params) {
     return response.text(); // Parse the response as JSON
   })
   .then((html) => {
-    console.log(html.slice(9000,18181));
+    console.log(html.slice(9000,18210));
     console.log(html.slice(-2517,-1000));
-    let content= html.slice(18181,-2517);
+    let content= html.slice(18210,-2517);
     appContainer.innerHTML = content;     // Append the element to the container
     // appContainer.innerHTML = html;     // Append the element to the container
     window.removeEventListener('DOMContentLoaded', safeRouter);
@@ -53,9 +52,17 @@ function renderComponent(matchedRoute, params) {
     if (matchedRoute===routes[0]){
       load_start=0;
       load_end=0;
-      setTimeout(() => {
-          getProds();
-      }, 500);
+        if(typeof getProds === "function") {
+          afterProds();
+          console.log("skipped reload")
+        }
+        else {
+          const script = document.createElement("script");
+          script.src = "/static/assets/js/index.js"; // 
+          script.onload = () => getProds();
+          document.head.appendChild(script);
+          console.log("first load")
+        }
 
     }
 
@@ -118,8 +125,11 @@ links.forEach(link => {
     e.preventDefault();
 
     const path = link.getAttribute('href');
-    window.history.pushState({}, '', path);
+    if (path !== window.location.pathname){
+      window.history.pushState({}, '', path);
+      router();
 
-    router();
+    }
+
   });
 });
