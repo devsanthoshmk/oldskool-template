@@ -20,8 +20,8 @@
 ### Santhosh M K
 
 - [X] Add sort, filter, search built-in functions to respective buttons
-- [ ] SSG products to html files
-- [ ] Use product.json similar for You May Also Like
+- [x] SSG products to html files
+- [x] ~~Use product.json similar for You May Also Like~~ SSGed it
 - [x] Create htmls for upper base.html(the trimming part upper in CSR) and same for lower part to get indexes
 - [ ] Add non-persistant cart first
 - [ ] Add non-persistant wishlist first
