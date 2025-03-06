@@ -75,7 +75,7 @@ function renderProducts(products,fresh=false) {
                         ${quickAddHTML}
                     </div>
                     <div class="card-body px-0">
-                        <a class="text-decoration-none link-cover" href="/product">${product.title}</a>
+                        <a class="text-decoration-none link-cover" href="/product/${product.product_id}">${product.title}</a>
                         <span class="text-secondary">| By ${product.brand}</span>
                         <small class="text-muted d-block">${product.options}</small>
                         ${priceHTML}
@@ -340,7 +340,7 @@ function performSearch(){
     const url=new URLSearchParams(window.location.search);
     let query=url.get("query");
     console.log(query);
-    if (query.length !== 0) search(url.get("query"),fromURL=true);
+    if (query && query.length !== 0) search(query,fromURL=true);
 
 }
 

@@ -1,0 +1,212 @@
+[
+    {
+        "product_id": "P001",
+        "title": "Siddha Herbal Oil",
+        "price": "329.99",
+        "offer_price": "198.66",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml",
+            "150ml",
+            "300ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg",
+        "brand": "HerbPure",
+        "brand_id": "HP001",
+        "description": "This is a dummy description for product {'product_id': 'P001', 'title': 'Siddha Herbal Oil', 'price': '329.99', 'offer_price': '198.66', 'currency': '$', 'options': ['100ml', '200ml', '500ml', '150ml', '300ml'], 'img': 'https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg', 'brand': 'HerbPure', 'brand_id': 'HP001'}.",
+        "ingredients": [
+            "Ingredient 52",
+            "Ingredient 149",
+            "Ingredient 249"
+        ]
+    },
+    {
+        "product_id": "P002",
+        "title": "Ayurveda Immunity Booster",
+        "price": "275.45",
+        "new": true,
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13787561/pexels-photo-13787561.jpeg",
+        "brand": "AyurLife",
+        "brand_id": "AL002",
+        "description": "This is a dummy description for product {'product_id': 'P002', 'title': 'Ayurveda Immunity Booster', 'price': '275.45', 'new': True, 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13787561/pexels-photo-13787561.jpeg', 'brand': 'AyurLife', 'brand_id': 'AL002'}.",
+        "ingredients": [
+            "Ingredient 58",
+            "Ingredient 120",
+            "Ingredient 254"
+        ]
+    },
+    {
+        "product_id": "P003",
+        "title": "Siddha Pain Relief Balm",
+        "price": "198.56",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779105/pexels-photo-13779105.jpeg",
+        "brand": "SiddhaCure",
+        "brand_id": "SC003",
+        "description": "This is a dummy description for product {'product_id': 'P003', 'title': 'Siddha Pain Relief Balm', 'price': '198.56', 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13779105/pexels-photo-13779105.jpeg', 'brand': 'SiddhaCure', 'brand_id': 'SC003'}.",
+        "ingredients": [
+            "Ingredient 8",
+            "Ingredient 139",
+            "Ingredient 206"
+        ]
+    },
+    {
+        "product_id": "P004",
+        "title": "Ayurveda Skin Glow Cream",
+        "price": "425.85",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779110/pexels-photo-13779110.jpeg",
+        "brand": "GlowAyur",
+        "brand_id": "GA004",
+        "description": "This is a dummy description for product {'product_id': 'P004', 'title': 'Ayurveda Skin Glow Cream', 'price': '425.85', 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13779110/pexels-photo-13779110.jpeg', 'brand': 'GlowAyur', 'brand_id': 'GA004'}.",
+        "ingredients": [
+            "Ingredient 24",
+            "Ingredient 139",
+            "Ingredient 221"
+        ]
+    },
+    {
+        "product_id": "P005",
+        "title": "Siddha Digestive Powder",
+        "price": "196.99",
+        "offer_price": "98.66",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/14027296/pexels-photo-14027296.jpeg",
+        "brand": "SiddhaHerbs",
+        "brand_id": "SH005",
+        "description": "This is a dummy description for product {'product_id': 'P005', 'title': 'Siddha Digestive Powder', 'price': '196.99', 'offer_price': '98.66', 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/14027296/pexels-photo-14027296.jpeg', 'brand': 'SiddhaHerbs', 'brand_id': 'SH005'}.",
+        "ingredients": [
+            "Ingredient 78",
+            "Ingredient 146",
+            "Ingredient 238"
+        ]
+    },
+    {
+        "product_id": "P006",
+        "title": "Ayurveda Relaxation Tea",
+        "price": "329.99",
+        "offer_price": "198.66",
+        "new": true,
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779106/pexels-photo-13779106.jpeg",
+        "brand": "AyurTea",
+        "brand_id": "AT006",
+        "description": "This is a dummy description for product {'product_id': 'P006', 'title': 'Ayurveda Relaxation Tea', 'price': '329.99', 'offer_price': '198.66', 'new': True, 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13779106/pexels-photo-13779106.jpeg', 'brand': 'AyurTea', 'brand_id': 'AT006'}.",
+        "ingredients": [
+            "Ingredient 41",
+            "Ingredient 132",
+            "Ingredient 224"
+        ]
+    },
+    {
+        "product_id": "P007",
+        "title": "Siddha Energy Tonic",
+        "price": "444.99",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/14163204/pexels-photo-14163204.jpeg",
+        "brand": "SiddhaBoost",
+        "brand_id": "SB007",
+        "description": "This is a dummy description for product {'product_id': 'P007', 'title': 'Siddha Energy Tonic', 'price': '444.99', 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/14163204/pexels-photo-14163204.jpeg', 'brand': 'SiddhaBoost', 'brand_id': 'SB007'}.",
+        "ingredients": [
+            "Ingredient 83",
+            "Ingredient 180",
+            "Ingredient 237"
+        ]
+    },
+    {
+        "product_id": "P008",
+        "title": "Ayurveda Joint Care Capsules",
+        "price": "178.99",
+        "new": true,
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779111/pexels-photo-13779111.jpeg",
+        "brand": "JointAyur",
+        "brand_id": "JA008",
+        "description": "This is a dummy description for product {'product_id': 'P008', 'title': 'Ayurveda Joint Care Capsules', 'price': '178.99', 'new': True, 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13779111/pexels-photo-13779111.jpeg', 'brand': 'JointAyur', 'brand_id': 'JA008'}.",
+        "ingredients": [
+            "Ingredient 10",
+            "Ingredient 158",
+            "Ingredient 220"
+        ]
+    },
+    {
+        "product_id": "P009",
+        "title": "Siddha Hair Growth Oil",
+        "price": "154.99",
+        "new": true,
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/6442509/pexels-photo-6442509.jpeg",
+        "brand": "SiddhaHair",
+        "brand_id": "SH009",
+        "description": "This is a dummy description for product {'product_id': 'P009', 'title': 'Siddha Hair Growth Oil', 'price': '154.99', 'new': True, 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/6442509/pexels-photo-6442509.jpeg', 'brand': 'SiddhaHair', 'brand_id': 'SH009'}.",
+        "ingredients": [
+            "Ingredient 92",
+            "Ingredient 178",
+            "Ingredient 253"
+        ]
+    },
+    {
+        "product_id": "P010",
+        "title": "Ayurveda Stress Relief Oil",
+        "price": "299.99",
+        "offer_price": "199.99",
+        "currency": "$",
+        "options": [
+            "100ml",
+            "200ml",
+            "500ml"
+        ],
+        "img": "https://images.pexels.com/photos/13779107/pexels-photo-13779107.jpeg",
+        "brand": "CalmAyur",
+        "brand_id": "CA010",
+        "description": "This is a dummy description for product {'product_id': 'P010', 'title': 'Ayurveda Stress Relief Oil', 'price': '299.99', 'offer_price': '199.99', 'currency': '$', 'options': ['100ml', '200ml', '500ml'], 'img': 'https://images.pexels.com/photos/13779107/pexels-photo-13779107.jpeg', 'brand': 'CalmAyur', 'brand_id': 'CA010'}.",
+        "ingredients": [
+            "Ingredient 28",
+            "Ingredient 111",
+            "Ingredient 255"
+        ]
+    }
+]

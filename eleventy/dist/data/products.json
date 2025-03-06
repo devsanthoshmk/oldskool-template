@@ -1,15 +1,17 @@
 [
     {
+        "product_id": "P001",
         "title": "Siddha Herbal Oil",
         "price": "329.99",
         "offer_price": "198.66",
         "currency": "$",
-        "options": ["100ml", "200ml", "500ml","150ml","300ml"],
+        "options": ["100ml", "200ml", "500ml", "150ml", "300ml"],
         "img": "https://images.pexels.com/photos/13779112/pexels-photo-13779112.jpeg",
         "brand": "HerbPure",
         "brand_id": "HP001"
     },
     {
+        "product_id": "P002",
         "title": "Ayurveda Immunity Booster",
         "price": "275.45",
         "new": true,
@@ -20,6 +22,7 @@
         "brand_id": "AL002"
     },
     {
+        "product_id": "P003",
         "title": "Siddha Pain Relief Balm",
         "price": "198.56",
         "currency": "$",
@@ -29,6 +32,7 @@
         "brand_id": "SC003"
     },
     {
+        "product_id": "P004",
         "title": "Ayurveda Skin Glow Cream",
         "price": "425.85",
         "currency": "$",
@@ -38,6 +42,7 @@
         "brand_id": "GA004"
     },
     {
+        "product_id": "P005",
         "title": "Siddha Digestive Powder",
         "price": "196.99",
         "offer_price": "98.66",
@@ -48,6 +53,7 @@
         "brand_id": "SH005"
     },
     {
+        "product_id": "P006",
         "title": "Ayurveda Relaxation Tea",
         "price": "329.99",
         "offer_price": "198.66",
@@ -59,6 +65,7 @@
         "brand_id": "AT006"
     },
     {
+        "product_id": "P007",
         "title": "Siddha Energy Tonic",
         "price": "444.99",
         "currency": "$",
@@ -68,6 +75,7 @@
         "brand_id": "SB007"
     },
     {
+        "product_id": "P008",
         "title": "Ayurveda Joint Care Capsules",
         "price": "178.99",
         "new": true,
@@ -78,6 +86,7 @@
         "brand_id": "JA008"
     },
     {
+        "product_id": "P009",
         "title": "Siddha Hair Growth Oil",
         "price": "154.99",
         "new": true,
@@ -88,6 +97,7 @@
         "brand_id": "SH009"
     },
     {
+        "product_id": "P010",
         "title": "Ayurveda Stress Relief Oil",
         "price": "299.99",
         "offer_price": "199.99",
