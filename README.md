@@ -1,100 +1,133 @@
-# **Synopsis**
+# Oldskool e-commerce website template: Eleventy static site generator and Django storefront
 
-1. [Todo](#Todo)
-2. [Tweaks](#tweaks)
-3. [Contributing Instruction](#e-commerce-website)
+Oldskool is an open source e-commerce frontend template that provides store layouts for Eleventy static site generation and Django web applications.
 
-## Todo:
+This e-commerce website template provides a complete frontend foundation for online retail shops, catalog sites, and digital storefronts. The repository contains two implementations: an Eleventy v3 static site generator workflow and a Django 5.1 server-rendered application. Both implementations share identical Bootstrap responsive layouts, Remixicon icons, and modular page templates.
 
-### Kavishri R
+The template provides 10 page layouts for the retail purchase journey: a homepage with a Swiper hero carousel, product catalog, individual product detail pages, shopping cart, multi-step checkout with shipping and payment forms, customer login, user registration, and password recovery.
 
-- [ ] Mobile responsiveness (probably changing Bootstrap class names)
-- [ ] Flipkart Amazon like product image display(side by side)
-- [ ] add Buy Now(use "add to shopping button" change color and text to it) and Like button(we already have it on product image at homescreens)
-- [ ] Fix Breadcrumbs broken links and disappear in smaller displays in /checkout /checkout-shipping /shopping /payment
-- [ ] Check on UI inconsistancy and mobile responsiveness in /checkout and /checkout-shipping(like removing the product list and grand total and all)
-- [ ] Create a popup using Bootstrap after clicking complete order in /checkout-shipping
-- [ ] Testing and Improving Front-end stuffs overall
-- [ ] Add More todos here *if any*
+## Architecture
 
-### Santhosh M K
+The repository contains two distinct application directories alongside shared design assets:
 
-- [X] Add sort, filter, search built-in functions to respective buttons
-- [x] SSG products to html files
-- [x] ~~Use product.json similar for You May Also Like~~ SSGed it
-- [x] Create htmls for upper base.html(the trimming part upper in CSR) and same for lower part to get indexes
-- [ ] Add non-persistant cart first
-- [ ] Add non-persistant wishlist first
-- [ ] Get current location in checkout page
-- [ ] Auto fill infos(like name(immutable), email(immutable), address(mutable)) from login info or sign-up based on it in /checkout
-- [ ] Save name,address on /checkout and /checkout-shopping in json to send them to database
-- [ ] Make like button working #wishlist
-- [ ] Learn to use payment gateway
-- [ ] Implement testing payment gateway(with cloudflare)
-- [ ] Learn google oauth login and user login
-- [ ] Implement /login /register with loc funciton say nodejs
-- [ ] Learn database(MySql)
-- [ ] Implement database in /checkout /checkout-shopping wishlist login oauth... everywhere
-- [ ] Implement cloudflare workers instead of loc functions
-- [ ] Implement supabase instead of MySql
-- [ ] Deploy whole thing to pages 
+- `eleventy/`: Static site generator implementation powered by Eleventy v3 and Nunjucks templates. It reads product data from JSON files and compiles HTML pages into the `dist/` directory.
+- `templ-django/`: Server-rendered implementation powered by Django 5.1. It includes a `products` application that routes and renders storefront views via Django templates.
 
-## Tweaks:
+The storefront architecture consists of five core components:
 
-- [ ] https://uiverse.io/Nawsome/spicy-wolverine-85 with out loader__ball for loading if needed
-- [ ] Remove footer header wherevery not needed
-- [ ] Innovative Front-end design ideas like using local storage to pickup where user were
+- Modular templates: The base layout in `templates/base.html` defines the document head, navigation bar, and footer. Child templates extend `base.html` and fill the main content block.
+- Static product detail pages: In Eleventy, `templates/product.html` uses Nunjucks pagination over `templates/data/product_details.json` to generate static product pages at `product/:id/index.html`.
+- Client-side router: The script `static/assets/js/route.js` intercepts page navigation, fetches destination HTML via the fetch API, and updates the `#content` container without full page reloads.
+- Dynamic catalog scripts: The script `static/assets/js/index.js` renders product cards from JSON data, displays price and availability badges, and manages catalog pagination.
+- Asset bundle: CSS bundles `libs.bundle.css` and `theme.bundle.css`, JavaScript bundles `theme.bundle.js` and `vendor.bundle.js`, Remixicon fonts, and SVG payment icons live in `static/assets/`.
 
-## E-Commerce Website
+## Setup
 
-**THIS IS DEV BRANCH FEATURES IN PROCESS COMES HERE**
+### Eleventy setup
 
-### Installation
+Eleventy requires Node.js 18 or higher. Install dependencies with npm:
 
-  - First go to eleventy folder
-  ```bash
-    cd eleventy
-  ```
-
-  - Install requirements by
-  ```bash
-    npm install
-  ```
-
-### Contribution
-
-  - open vs code
-  ```bash
-    code .
-  ```
-
-  - run dev server(in any terminal under eleventy folder)
-  ```bash
-    npm run serve
-  ```
-
-  - Go to templates folder you can find html files....
-
-### **Changes will reflect on the go in the browser while the dev server is active no need to restart**
-
-
-# Those function(sort,filter....) format(Deprecated):
-
-```javascript
-function sort_by_price(reverse=false){
-  if (!reverse){
-  //{
-  //low to high logic 
-  //}
-  } else {
-  //high to low
-  }
-
-  // now change products array within that sorting logic and that's it!!!
-
-  //calling the load funtion to renderProducts with load more button in mind here you dont need to do anythin
-
-  load();
-
-}
+```bash
+cd eleventy
+npm install
 ```
+
+### Django setup
+
+Django requires Python 3.10 or higher. Create a virtual environment, install requirements, and apply database migrations:
+
+```bash
+cd templ-django
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python templete/manage.py migrate
+```
+
+## Usage
+
+### Run the Eleventy development server
+
+Start the Eleventy local development server with hot reload:
+
+```bash
+cd eleventy
+npm run serve
+```
+
+The site is available at `http://localhost:8080`.
+
+### Build Eleventy static output
+
+Compile all templates and copy static assets to the output directory:
+
+```bash
+cd eleventy
+npm run build
+```
+
+Eleventy outputs static HTML and assets into the `eleventy/dist/` directory.
+
+### Run the Django development server
+
+Start the Django development server:
+
+```bash
+cd templ-django
+source venv/bin/activate
+python templete/manage.py runserver
+```
+
+The Django application is available at `http://127.0.0.1:8000/`.
+
+### Available routes
+
+Both implementations provide the following URL routes:
+
+- `/`: Storefront homepage with hero slider and product grid
+- `/product`: Product details view
+- `/cart`: Shopping cart summary
+- `/checkout`: Customer details and billing address form
+- `/checkout-shipping`: Shipping method selection form
+- `/checkout-payment`: Payment method selection form
+- `/login`: User authentication login page
+- `/register`: New customer registration page
+- `/forgotten-password`: Password reset request page
+
+## Configuration
+
+### Eleventy configuration
+
+The Eleventy build configuration lives in `eleventy/.eleventy.js`.
+
+- Input directory: `templates`
+- Includes directory: `includes`
+- Output directory: `dist`
+- Data directory: `data`
+- Template engine: Nunjucks (`njk`)
+- Passthrough copies: Copies CSS files, JavaScript bundles, fonts, images, SVGs, and `products.json` into `dist/`.
+- Custom shortcodes:
+  - `static`: Resolves static file paths and prepends `/static/`.
+  - `comment`: Strips commented markup blocks during template rendering.
+
+### Product data configuration
+
+Product datasets reside in `eleventy/templates/data/`:
+
+- `products.json`: Array of product objects containing title, brand, price, offer price, image URL, and status flags.
+- `product_details.json`: Array of extended product records used by Eleventy pagination to generate individual product pages.
+- `makeProducts.py`: Python generator script that reads `products.json` and creates `product_details.json`. Run this script to refresh product detail data:
+
+```bash
+cd eleventy/templates/data
+python3 makeProducts.py
+```
+
+### Django configuration
+
+The Django settings file lives in `templ-django/templete/templete/settings.py`.
+
+- Application registry: `INSTALLED_APPS` includes `products` alongside standard Django modules.
+- Database: `DATABASES` connects to SQLite at `BASE_DIR / 'db.sqlite3'`.
+- Static files: `STATIC_URL` routes static asset requests to `products/static/`.
+- URL routing: `templete/urls.py` mounts the `products` application at the root path.
